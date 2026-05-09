@@ -1,0 +1,341 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* shadcn tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Brand fonts */
+  --font-display: var(--font-playfair);
+  --font-body:    var(--font-lora);
+  --font-ui:      var(--font-dm-sans);
+
+  /* Brand color utilities → bg-lp-bg, text-lp-text, bg-lp-accent, etc. */
+  --color-lp-bg:       var(--lp-bg);
+  --color-lp-surface:  var(--lp-surface);
+  --color-lp-surface2: var(--lp-surface-2);
+  --color-lp-text:     var(--lp-text);
+  --color-lp-muted:    var(--lp-text-muted);
+  --color-lp-accent:   var(--lp-accent);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SHADCN BASE TOKENS (keep for shadcn component compat)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   BRAND TOKENS — LIGHT THEME (default)
+   To ship the dark theme, change defaultTheme in
+   components/providers.tsx to "dark".
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+:root {
+  /* Core palette */
+  --lp-bg:           #F7F4EF;
+  --lp-bg-alt:       #EFEBE4;
+  --lp-surface:      #FFFFFF;
+  --lp-surface-2:    #EFEBE4;
+  --lp-text:         #1A1612;
+  --lp-text-muted:   #6B6258;
+  --lp-accent:       #2F8F84;
+  --lp-accent-hover: #236D64;
+  --lp-border:       rgba(26, 22, 18, 0.10);
+  --lp-nav-bg:       rgba(247, 244, 239, 0.94);
+
+  /* Component tokens */
+  --lp-logo-color:           var(--lp-accent);
+  --lp-btn-text:             #ffffff;
+  --lp-accent-line-w:        2px;
+
+  --lp-nav-cta-bg:           var(--lp-accent);
+  --lp-nav-cta-color:        #fff;
+  --lp-nav-cta-border:       transparent;
+  --lp-nav-cta-hover-bg:     var(--lp-accent-hover);
+  --lp-mobile-cta-color:     #fff;
+
+  --lp-hero-phrase-active:   #1A1612;
+  --lp-hero-phrase-dim:      rgba(26, 22, 18, 0.25);
+  --lp-grain-opacity:        0;
+
+  --lp-indicator-track:      rgba(26, 22, 18, 0.15);
+  --lp-indicator-active:     rgba(26, 22, 18, 0.08);
+  --lp-dot-track:            rgba(26, 22, 18, 0.15);
+  --lp-dot-active:           rgba(26, 22, 18, 0.08);
+
+  --lp-slide-bg-1:
+    linear-gradient(to bottom, rgba(247,244,239,0.78) 0%, rgba(247,244,239,0.58) 50%, rgba(247,244,239,0.94) 100%),
+    radial-gradient(ellipse 120% 100% at 60% 45%, #a8d4cf 0%, #cce4e2 40%, #f7f4ef 100%);
+  --lp-slide-bg-2:
+    linear-gradient(to bottom, rgba(247,244,239,0.76) 0%, rgba(247,244,239,0.54) 50%, rgba(247,244,239,0.94) 100%),
+    radial-gradient(ellipse 100% 90% at 60% 50%, #b8dbd8 0%, #d4eceb 50%, #f7f4ef 100%);
+  --lp-slide-bg-3:
+    linear-gradient(to bottom, rgba(247,244,239,0.78) 0%, rgba(247,244,239,0.56) 50%, rgba(247,244,239,0.94) 100%),
+    radial-gradient(ellipse 110% 80% at 55% 55%, #a0cdc9 0%, #c8e4e2 50%, #f7f4ef 100%);
+
+  --lp-hero-img-1:
+    linear-gradient(to bottom, rgba(247,244,239,0.1) 0%, rgba(247,244,239,0.3) 100%),
+    radial-gradient(ellipse 120% 100% at 55% 40%, #7fc4bc 0%, #a8d8d4 60%, #cceae8 100%);
+  --lp-hero-img-2:
+    linear-gradient(to bottom, rgba(247,244,239,0.1) 0%, rgba(247,244,239,0.3) 100%),
+    radial-gradient(ellipse 100% 100% at 50% 40%, #5ab5ab 0%, #8ecec9 60%, #c0e4e2 100%);
+  --lp-hero-img-3:
+    linear-gradient(to bottom, rgba(247,244,239,0.1) 0%, rgba(247,244,239,0.3) 100%),
+    radial-gradient(ellipse 110% 100% at 55% 45%, #6abdb5 0%, #98d0cb 60%, #c8e8e6 100%);
+
+  --lp-sermon-thumb-bg:      linear-gradient(135deg, #a8d8d4 0%, #7fc4bc 100%);
+  --lp-play-btn-bg:          white;
+  --lp-play-btn-border:      rgba(26, 22, 18, 0.2);
+  --lp-play-btn-hover-bg:    white;
+  --lp-play-btn-hover-border: var(--lp-accent);
+  --lp-play-btn-hover-shadow: 0 4px 16px rgba(47,143,132,0.25);
+  --lp-play-icon-color:      var(--lp-accent);
+  --lp-sermon-link-hover:    var(--lp-accent);
+
+  --lp-vision-bg:            var(--lp-bg-alt);
+  --lp-vision-kicker-color:  var(--lp-accent-hover);
+
+  --lp-altar-bg:             var(--lp-accent);
+  --lp-altar-label-color:    rgba(255, 255, 255, 0.60);
+  --lp-altar-headline-color: #fff;
+  --lp-altar-times-color:    #fff;
+  --lp-altar-body-color:     rgba(255, 255, 255, 0.82);
+  --lp-altar-divider-color:  rgba(255, 255, 255, 0.40);
+  --lp-altar-divider-opacity: 1;
+  --lp-altar-cta-bg:         #fff;
+  --lp-altar-cta-color:      var(--lp-accent);
+  --lp-altar-cta-hover-bg:   #f0f0f0;
+  --lp-altar-address-color:  rgba(255, 255, 255, 0.72);
+  --lp-altar-link-color:     #fff;
+  --lp-altar-link-deco:      underline;
+
+  --lp-footer-bg:            #111C1B;
+  --lp-footer-border:        rgba(255, 255, 255, 0.06);
+  --lp-footer-wordmark:      #F0EBE0;
+  --lp-footer-tagline:       rgba(240, 235, 224, 0.45);
+  --lp-footer-col-title:     rgba(240, 235, 224, 0.30);
+  --lp-footer-link:          rgba(240, 235, 224, 0.45);
+  --lp-footer-link-hover:    #F0EBE0;
+  --lp-footer-copy:          rgba(240, 235, 224, 0.25);
+  --lp-footer-addr:          rgba(240, 235, 224, 0.25);
+  --lp-footer-social-border: rgba(255, 255, 255, 0.10);
+  --lp-footer-social-color:  rgba(240, 235, 224, 0.45);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   BRAND TOKENS — DARK THEME
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.dark {
+  /* Core palette */
+  --lp-bg:           #0D1117;
+  --lp-surface:      #111822;
+  --lp-surface-2:    #161F2E;
+  --lp-text:         #F0EBE0;
+  --lp-text-muted:   #9A9080;
+  --lp-accent:       #C9622F;
+  --lp-accent-hover: #B5511F;
+  --lp-border:       rgba(240, 235, 224, 0.08);
+  --lp-nav-bg:       rgba(13, 17, 23, 0.92);
+
+  /* Component tokens */
+  --lp-logo-color:           #F0EBE0;
+  --lp-btn-text:             #0D1117;
+  --lp-accent-line-w:        1px;
+
+  --lp-nav-cta-bg:           transparent;
+  --lp-nav-cta-color:        var(--lp-text);
+  --lp-nav-cta-border:       rgba(240, 235, 224, 0.3);
+  --lp-nav-cta-hover-bg:     transparent;
+  --lp-mobile-cta-color:     #0D1117;
+
+  --lp-hero-phrase-active:   #FFFFFF;
+  --lp-hero-phrase-dim:      rgba(240, 235, 224, 0.32);
+  --lp-grain-opacity:        0.5;
+
+  --lp-indicator-track:      rgba(240, 235, 224, 0.20);
+  --lp-indicator-active:     rgba(240, 235, 224, 0.10);
+  --lp-dot-track:            rgba(240, 235, 224, 0.20);
+  --lp-dot-active:           rgba(240, 235, 224, 0.10);
+
+  --lp-slide-bg-1:
+    linear-gradient(to bottom, rgba(13,17,23,0.72) 0%, rgba(13,17,23,0.5) 50%, rgba(13,17,23,0.88) 100%),
+    radial-gradient(ellipse 120% 100% at 60% 50%, #2a1a0e 0%, #1a1208 40%, #0d1117 100%);
+  --lp-slide-bg-2:
+    linear-gradient(to bottom, rgba(13,17,23,0.68) 0%, rgba(13,17,23,0.46) 50%, rgba(13,17,23,0.88) 100%),
+    radial-gradient(ellipse 80% 80% at 65% 40%, #3d1f0a 0%, #1f1008 50%, #0d1117 100%);
+  --lp-slide-bg-3:
+    linear-gradient(to bottom, rgba(13,17,23,0.7) 0%, rgba(13,17,23,0.5) 50%, rgba(13,17,23,0.88) 100%),
+    radial-gradient(ellipse 100% 80% at 55% 55%, #1a2a1a 0%, #0f1a12 50%, #0d1117 100%);
+
+  --lp-hero-img-1:
+    linear-gradient(to bottom, rgba(13,17,23,0.2) 0%, rgba(13,17,23,0.45) 100%),
+    radial-gradient(ellipse 120% 100% at 60% 40%, #3a2510 0%, #1e1208 60%, #0d1117 100%);
+  --lp-hero-img-2:
+    linear-gradient(to bottom, rgba(13,17,23,0.15) 0%, rgba(13,17,23,0.4) 100%),
+    radial-gradient(ellipse 100% 100% at 50% 40%, #4a2a0e 0%, #251508 60%, #0d1117 100%);
+  --lp-hero-img-3:
+    linear-gradient(to bottom, rgba(13,17,23,0.2) 0%, rgba(13,17,23,0.45) 100%),
+    radial-gradient(ellipse 110% 100% at 55% 45%, #1e3020 0%, #111a12 60%, #0d1117 100%);
+
+  --lp-sermon-thumb-bg:      radial-gradient(ellipse at center, #1e1408 0%, #0d1117 100%);
+  --lp-play-btn-bg:          transparent;
+  --lp-play-btn-border:      rgba(240, 235, 224, 0.3);
+  --lp-play-btn-hover-bg:    rgba(201, 98, 47, 0.1);
+  --lp-play-btn-hover-border: var(--lp-accent);
+  --lp-play-btn-hover-shadow: none;
+  --lp-play-icon-color:      rgba(240, 235, 224, 0.8);
+  --lp-sermon-link-hover:    var(--lp-text);
+
+  --lp-vision-bg:            var(--lp-bg);
+  --lp-vision-kicker-color:  var(--lp-text);
+
+  --lp-altar-bg:             var(--lp-surface);
+  --lp-altar-label-color:    var(--lp-accent);
+  --lp-altar-headline-color: var(--lp-text);
+  --lp-altar-times-color:    var(--lp-text);
+  --lp-altar-body-color:     var(--lp-text-muted);
+  --lp-altar-divider-color:  var(--lp-accent);
+  --lp-altar-divider-opacity: 0.6;
+  --lp-altar-cta-bg:         var(--lp-accent);
+  --lp-altar-cta-color:      #0D1117;
+  --lp-altar-cta-hover-bg:   var(--lp-accent-hover);
+  --lp-altar-address-color:  var(--lp-text-muted);
+  --lp-altar-link-color:     var(--lp-accent);
+  --lp-altar-link-deco:      none;
+
+  --lp-footer-bg:            #090D13;
+  --lp-footer-border:        var(--lp-border);
+  --lp-footer-wordmark:      var(--lp-text);
+  --lp-footer-tagline:       var(--lp-text-muted);
+  --lp-footer-col-title:     rgba(240, 235, 224, 0.25);
+  --lp-footer-link:          rgba(240, 235, 224, 0.45);
+  --lp-footer-link-hover:    var(--lp-text);
+  --lp-footer-copy:          rgba(240, 235, 224, 0.40);
+  --lp-footer-addr:          rgba(240, 235, 224, 0.40);
+  --lp-footer-social-border: var(--lp-border);
+  --lp-footer-social-color:  var(--lp-text-muted);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   BASE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    background: var(--lp-bg);
+    color: var(--lp-text);
+    font-family: var(--font-body), Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition: background 0.35s ease, color 0.35s ease;
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   KEYFRAMES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

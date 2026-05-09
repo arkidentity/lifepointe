@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<!--
+  LIFEPOINTE CHURCH — HOMEPAGE MOCKUP (UNIFIED)
+  ═══════════════════════════════════════════════
+  THEME SWITCH: change data-theme on <html> above.
+    data-theme="dark"   →  dark theme  (#C9622F orange accent)
+    data-theme="light"  →  light theme (#2F8F84 teal accent)
+
+  That single attribute change is the ONLY thing needed to switch themes.
+  All colors, backgrounds, and component variants are driven by CSS custom
+  properties defined in the two [data-theme] blocks below. Nothing else
+  in this file needs to be touched.
+
+  In the Next.js build this maps to globals.css token blocks + a
+  data-theme attribute on <html> set in layout.tsx.
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lifepointe Church</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     DARK THEME TOKENS
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  [data-theme="dark"] {
+    /* Core palette */
+    --bg:              #0D1117;
+    --surface:         #111822;
+    --surface-2:       #161F2E;
+    --text:            #F0EBE0;
+    --text-muted:      #9A9080;
+    --accent:          #C9622F;
+    --accent-hover:    #B5511F;
+    --border:          rgba(240, 235, 224, 0.08);
+    --nav-bg:          rgba(13, 17, 23, 0.92);
+
+    /* Component tokens */
+    --logo-color:               #F0EBE0;
+    --btn-text:                 #0D1117;
+    --accent-line-w:            1px;
+
+    --nav-cta-bg:               transparent;
+    --nav-cta-color:            var(--text);
+    --nav-cta-border:           rgba(240, 235, 224, 0.3);
+    --nav-cta-hover-bg:         transparent;
+    --nav-cta-hover-border:     var(--accent);
+    --nav-cta-hover-color:      var(--accent);
+    --mobile-cta-color:         #0D1117;
+
+    --hero-phrase-active:       #FFFFFF;
+    --hero-phrase-dim:          rgba(240, 235, 224, 0.32);
+    --grain-opacity:            0.5;
+
+    --indicator-track:          rgba(240, 235, 224, 0.20);
+    --indicator-track-active:   rgba(240, 235, 224, 0.10);
+    --dot-track:                rgba(240, 235, 224, 0.20);
+    --dot-track-active:         rgba(240, 235, 224, 0.10);
+
+    /* Slide backgrounds (desktop) */
+    --slide-bg-1:
+      linear-gradient(to bottom, rgba(13,17,23,0.72) 0%, rgba(13,17,23,0.5) 50%, rgba(13,17,23,0.88) 100%),
+      radial-gradient(ellipse 120% 100% at 60% 50%, #2a1a0e 0%, #1a1208 40%, #0d1117 100%);
+    --slide-bg-2:
+      linear-gradient(to bottom, rgba(13,17,23,0.68) 0%, rgba(13,17,23,0.46) 50%, rgba(13,17,23,0.88) 100%),
+      radial-gradient(ellipse 80% 80% at 65% 40%, #3d1f0a 0%, #1f1008 50%, #0d1117 100%);
+    --slide-bg-3:
+      linear-gradient(to bottom, rgba(13,17,23,0.7) 0%, rgba(13,17,23,0.5) 50%, rgba(13,17,23,0.88) 100%),
+      radial-gradient(ellipse 100% 80% at 55% 55%, #1a2a1a 0%, #0f1a12 50%, #0d1117 100%);
+
+    /* Mobile inline images */
+    --hero-img-1-bg:
+      linear-gradient(to bottom, rgba(13,17,23,0.2) 0%, rgba(13,17,23,0.45) 100%),
+      radial-gradient(ellipse 120% 100% at 60% 40%, #3a2510 0%, #1e1208 60%, #0d1117 100%);
+    --hero-img-2-bg:
+      linear-gradient(to bottom, rgba(13,17,23,0.15) 0%, rgba(13,17,23,0.4) 100%),
+      radial-gradient(ellipse 100% 100% at 50% 40%, #4a2a0e 0%, #251508 60%, #0d1117 100%);
+    --hero-img-3-bg:
+      linear-gradient(to bottom, rgba(13,17,23,0.2) 0%, rgba(13,17,23,0.45) 100%),
+      radial-gradient(ellipse 110% 100% at 55% 45%, #1e3020 0%, #111a12 60%, #0d1117 100%);
+
+    /* Sermon */
+    --sermon-thumb-bg:          radial-gradient(ellipse at center, #1e1408 0%, #0d1117 100%);
+    --play-btn-bg:              transparent;
+    --play-btn-border:          rgba(240, 235, 224, 0.3);
+    --play-btn-hover-bg:        rgba(201, 98, 47, 0.1);
+    --play-btn-hover-border:    var(--accent);
+    --play-btn-hover-shadow:    none;
+    --play-icon-color:          rgba(240, 235, 224, 0.8);
+    --sermon-link-hover:        var(--text);
+
+    /* Vision */
+    --vision-bg:                var(--bg);
+    --vision-kicker-color:      var(--text);
+
+    /* Altar */
+    --altar-bg:                 var(--surface);
+    --altar-label-color:        var(--accent);
+    --altar-headline-color:     var(--text);
+    --altar-times-color:        var(--text);
+    --altar-body-color:         var(--text-muted);
+    --altar-divider-color:      var(--accent);
+    --altar-divider-opacity:    0.6;
+    --altar-cta-bg:             var(--accent);
+    --altar-cta-color:          #0D1117;
+    --altar-cta-hover-bg:       var(--accent-hover);
+    --altar-address-color:      var(--text-muted);
+    --altar-link-color:         var(--accent);
+    --altar-link-decoration:    none;
+
+    /* Footer */
+    --footer-bg:                #090D13;
+    --footer-border:            var(--border);
+    --footer-wordmark:          var(--text);
+    --footer-tagline:           var(--text-muted);
+    --footer-col-title:         rgba(240, 235, 224, 0.25);
+    --footer-link:              rgba(240, 235, 224, 0.45);
+    --footer-link-hover:        var(--text);
+    --footer-copy:              rgba(240, 235, 224, 0.40);
+    --footer-addr:              rgba(240, 235, 224, 0.40);
+    --footer-social-border:     var(--border);
+    --footer-social-color:      var(--text-muted);
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     LIGHT THEME TOKENS
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  [data-theme="light"] {
+    /* Core palette */
+    --bg:              #F7F4EF;
+    --bg-alt:          #EFEBE4;
+    --surface:         #FFFFFF;
+    --surface-2:       #EFEBE4;
+    --text:            #1A1612;
+    --text-muted:      #6B6258;
+    --accent:          #2F8F84;
+    --accent-hover:    #236D64;
+    --border:          rgba(26, 22, 18, 0.10);
+    --nav-bg:          rgba(247, 244, 239, 0.94);
+
+    /* Component tokens */
+    --logo-color:               var(--accent);
+    --btn-text:                 #ffffff;
+    --accent-line-w:            2px;
+
+    --nav-cta-bg:               var(--accent);
+    --nav-cta-color:            #fff;
+    --nav-cta-border:           transparent;
+    --nav-cta-hover-bg:         var(--accent-hover);
+    --nav-cta-hover-border:     transparent;
+    --nav-cta-hover-color:      #fff;
+    --mobile-cta-color:         #fff;
+
+    --hero-phrase-active:       #1A1612;
+    --hero-phrase-dim:          rgba(26, 22, 18, 0.25);
+    --grain-opacity:            0;
+
+    --indicator-track:          rgba(26, 22, 18, 0.15);
+    --indicator-track-active:   rgba(26, 22, 18, 0.08);
+    --dot-track:                rgba(26, 22, 18, 0.15);
+    --dot-track-active:         rgba(26, 22, 18, 0.08);
+
+    /* Slide backgrounds (desktop) */
+    --slide-bg-1:
+      linear-gradient(to bottom, rgba(247,244,239,0.78) 0%, rgba(247,244,239,0.58) 50%, rgba(247,244,239,0.94) 100%),
+      radial-gradient(ellipse 120% 100% at 60% 45%, #a8d4cf 0%, #cce4e2 40%, #f7f4ef 100%);
+    --slide-bg-2:
+      linear-gradient(to bottom, rgba(247,244,239,0.76) 0%, rgba(247,244,239,0.54) 50%, rgba(247,244,239,0.94) 100%),
+      radial-gradient(ellipse 100% 90% at 60% 50%, #b8dbd8 0%, #d4eceb 50%, #f7f4ef 100%);
+    --slide-bg-3:
+      linear-gradient(to bottom, rgba(247,244,239,0.78) 0%, rgba(247,244,239,0.56) 50%, rgba(247,244,239,0.94) 100%),
+      radial-gradient(ellipse 110% 80% at 55% 55%, #a0cdc9 0%, #c8e4e2 50%, #f7f4ef 100%);
+
+    /* Mobile inline images */
+    --hero-img-1-bg:
+      linear-gradient(to bottom, rgba(247,244,239,0.1) 0%, rgba(247,244,239,0.3) 100%),
+      radial-gradient(ellipse 120% 100% at 55% 40%, #7fc4bc 0%, #a8d8d4 60%, #cceae8 100%);
+    --hero-img-2-bg:
+      linear-gradient(to bottom, rgba(247,244,239,0.1) 0%, rgba(247,244,239,0.3) 100%),
+      radial-gradient(ellipse 100% 100% at 50% 40%, #5ab5ab 0%, #8ecec9 60%, #c0e4e2 100%);
+    --hero-img-3-bg:
+      linear-gradient(to bottom, rgba(247,244,239,0.1) 0%, rgba(247,244,239,0.3) 100%),
+      radial-gradient(ellipse 110% 100% at 55% 45%, #6abdb5 0%, #98d0cb 60%, #c8e8e6 100%);
+
+    /* Sermon */
+    --sermon-thumb-bg:          linear-gradient(135deg, #a8d8d4 0%, #7fc4bc 100%);
+    --play-btn-bg:              white;
+    --play-btn-border:          rgba(26, 22, 18, 0.2);
+    --play-btn-hover-bg:        white;
+    --play-btn-hover-border:    var(--accent);
+    --play-btn-hover-shadow:    0 4px 16px rgba(47,143,132,0.25);
+    --play-icon-color:          var(--accent);
+    --sermon-link-hover:        var(--accent);
+
+    /* Vision */
+    --vision-bg:                var(--bg-alt);
+    --vision-kicker-color:      var(--accent-hover);
+
+    /* Altar */
+    --altar-bg:                 var(--accent);
+    --altar-label-color:        rgba(255, 255, 255, 0.60);
+    --altar-headline-color:     #fff;
+    --altar-times-color:        #fff;
+    --altar-body-color:         rgba(255, 255, 255, 0.82);
+    --altar-divider-color:      rgba(255, 255, 255, 0.40);
+    --altar-divider-opacity:    1;
+    --altar-cta-bg:             #fff;
+    --altar-cta-color:          var(--accent);
+    --altar-cta-hover-bg:       #f0f0f0;
+    --altar-address-color:      rgba(255, 255, 255, 0.72);
+    --altar-link-color:         #fff;
+    --altar-link-decoration:    underline;
+
+    /* Footer — always dark regardless of theme */
+    --footer-bg:                #111C1B;
+    --footer-border:            rgba(255, 255, 255, 0.06);
+    --footer-wordmark:          #F0EBE0;
+    --footer-tagline:           rgba(240, 235, 224, 0.45);
+    --footer-col-title:         rgba(240, 235, 224, 0.30);
+    --footer-link:              rgba(240, 235, 224, 0.45);
+    --footer-link-hover:        #F0EBE0;
+    --footer-copy:              rgba(240, 235, 224, 0.25);
+    --footer-addr:              rgba(240, 235, 224, 0.25);
+    --footer-social-border:     rgba(255, 255, 255, 0.10);
+    --footer-social-color:      rgba(240, 235, 224, 0.45);
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     STRUCTURAL VISIBILITY TOGGLES
+     Elements that exist in HTML for both themes but are only
+     shown for one — controlled here, not via display vars.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  [data-theme="dark"]  .vision-leaf    { display: none; }
+  [data-theme="light"] .vision-glow    { display: none; }
+  [data-theme="dark"]  .altar-bg-glow  { display: block; }
+  [data-theme="light"] .altar-bg-glow  { display: none; }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     BASE STYLES
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Lora', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition: background 0.4s ease, color 0.4s ease;
+  }
+
+  /* ── NAV ── */
+  :root { --nav-h: 60px; }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: var(--nav-h);
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.4s ease, border-color 0.4s ease;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .logo-mark { width: 26px; height: 26px; }
+  .logo-mark path { transition: fill 0.4s ease, stroke 0.4s ease; }
+
+  .logo-wordmark {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.02em;
+    transition: color 0.4s ease;
+  }
+
+  .nav-links {
+    display: none;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    color: var(--nav-cta-color) !important;
+    background: var(--nav-cta-bg) !important;
+    border: 1px solid var(--nav-cta-border) !important;
+    padding: 8px 18px;
+    transition: border-color 0.2s, color 0.2s, background 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    border-color: var(--nav-cta-hover-border) !important;
+    color: var(--nav-cta-hover-color) !important;
+    background: var(--nav-cta-hover-bg) !important;
+  }
+
+  .nav-mobile-cta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mobile-cta-color);
+    background: var(--accent);
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    transition: color 0.4s ease, background 0.4s ease;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding-top: var(--nav-h);
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s ease;
+  }
+
+  .slide-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.4s ease;
+    z-index: 0;
+    display: none;
+  }
+
+  .slide-bg.active { opacity: 1; }
+  .slide-bg-1 { background: var(--slide-bg-1); }
+  .slide-bg-2 { background: var(--slide-bg-2); }
+  .slide-bg-3 { background: var(--slide-bg-3); }
+
+  .hero-grain {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    opacity: var(--grain-opacity);
+    transition: opacity 0.4s ease;
+  }
+
+  .hero-rule {
+    display: none;
+    position: absolute;
+    left: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--accent-line-w);
+    height: 180px;
+    background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+    opacity: 0.35;
+    z-index: 2;
+    transition: background 0.4s ease, width 0.4s ease;
+  }
+
+  .slide-indicators {
+    display: none;
+    position: absolute;
+    right: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .indicator {
+    width: var(--accent-line-w);
+    height: 32px;
+    background: var(--indicator-track);
+    cursor: pointer;
+    transition: height 0.3s, background 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .indicator::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 0%;
+    background: var(--accent);
+  }
+
+  .indicator.active { height: 48px; background: var(--indicator-track-active); }
+  .indicator.active::after { height: 100%; transition: height 4s linear; }
+
+  /* ── HERO CONTENT (mobile-first) ── */
+  .hero-content {
+    position: relative;
+    z-index: 5;
+    padding: 28px 20px 0;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.2s;
+    transition: color 0.4s ease;
+  }
+
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 7.5vw, 36px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+  }
+
+  .hero-phrase {
+    display: block;
+    opacity: 0;
+    transform: translateY(16px);
+    color: var(--hero-phrase-dim);
+    transition: color 0.6s ease;
+  }
+
+  .hero-phrase:nth-child(1) { animation: fadeUp 0.7s ease forwards 0.35s; }
+  .hero-phrase:nth-child(2) { animation: fadeUp 0.7s ease forwards 0.55s; }
+  .hero-phrase:nth-child(3) { animation: fadeUp 0.7s ease forwards 0.75s; }
+  .hero-phrase.highlighted  { color: var(--hero-phrase-active); }
+  .dot { color: var(--accent); transition: color 0.4s ease; }
+
+  .hero-subline-wrap {
+    position: relative;
+    height: 44px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.9s;
+  }
+
+  .hero-subline {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.7s ease, transform 0.7s ease, color 0.4s ease;
+  }
+
+  .hero-subline.active { opacity: 1; transform: translateY(0); }
+
+  /* ── MOBILE INLINE IMAGE ── */
+  .hero-image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 1.0s;
+  }
+
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-img.active { opacity: 1; }
+  .hero-img-1 { background: var(--hero-img-1-bg); }
+  .hero-img-2 { background: var(--hero-img-2-bg); }
+  .hero-img-3 { background: var(--hero-img-3-bg); }
+
+  /* Mobile dot indicators */
+  .hero-dots {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding: 0 20px;
+    opacity: 0;
+    animation: fadeUp 0.4s ease forwards 1.1s;
+  }
+
+  .hero-dot {
+    width: 20px;
+    height: 2px;
+    background: var(--dot-track);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.3s, background 0.4s ease;
+  }
+
+  .hero-dot::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--accent);
+  }
+
+  .hero-dot.active { width: 32px; background: var(--dot-track-active); }
+  .hero-dot.active::after { width: 100%; transition: width 4s linear; }
+
+  /* ── CTA AREA ── */
+  .hero-actions {
+    padding: 0 20px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 1.1s;
+  }
+
+  .btn-primary {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--btn-text);
+    background: var(--accent);
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background 0.2s, transform 0.2s, color 0.4s ease;
+  }
+
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+  .hero-service-info {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    transition: color 0.4s ease;
+  }
+
+  .hero-service-info strong { color: var(--text); font-weight: 500; transition: color 0.4s ease; }
+
+  .hero-service-info a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.4s ease;
+  }
+
+  .hero-service-info a:hover { text-decoration: underline; }
+
+  .hero-bottom-rule {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border) 30%, var(--border) 70%, transparent);
+  }
+
+  /* ── SERMON ── */
+  .sermon-section {
+    background: var(--surface);
+    padding: 56px 20px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.4s ease, border-color 0.4s ease;
+  }
+
+  .section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+    transition: color 0.4s ease;
+  }
+
+  .sermon-card {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .sermon-thumb {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+
+  .sermon-thumb-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--sermon-thumb-bg);
+    transition: background 0.4s ease;
+  }
+
+  .play-btn {
+    width: 52px;
+    height: 52px;
+    border: 1px solid var(--play-btn-border);
+    border-radius: 50%;
+    background: var(--play-btn-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+
+  .play-btn:hover {
+    border-color: var(--play-btn-hover-border);
+    background: var(--play-btn-hover-bg);
+    box-shadow: var(--play-btn-hover-shadow);
+  }
+
+  .play-btn svg { margin-left: 3px; }
+  .play-icon-fill { fill: var(--play-icon-color); transition: fill 0.4s ease; }
+
+  .sermon-meta { display: flex; flex-direction: column; gap: 12px; }
+
+  .sermon-series {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    transition: color 0.4s ease;
+  }
+
+  .sermon-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text);
+    transition: color 0.4s ease;
+  }
+
+  .sermon-date {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-muted);
+    transition: color 0.4s ease;
+  }
+
+  .sermon-desc {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-muted);
+    transition: color 0.4s ease;
+  }
+
+  .sermon-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-top: 4px;
+  }
+
+  .sermon-link {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+  }
+
+  .sermon-link:hover { color: var(--sermon-link-hover); }
+  .sermon-link svg { transition: transform 0.2s; }
+  .sermon-link:hover svg { transform: translateX(3px); }
+  .sermon-arrow { stroke: var(--text-muted); transition: stroke 0.2s; }
+  .sermon-link:hover .sermon-arrow { stroke: var(--sermon-link-hover); }
+
+  /* ── VISION ── */
+  .vision-section {
+    background: var(--vision-bg);
+    padding: 72px 20px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.4s ease, border-color 0.4s ease;
+  }
+
+  /* Dark theme: radial glow */
+  .vision-glow {
+    position: absolute;
+    top: 50%;
+    right: -100px;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(201,98,47,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Light theme: decorative leaf SVG */
+  .vision-leaf {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  .vision-inner { position: relative; z-index: 2; }
+
+  .vision-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 28px;
+    transition: color 0.4s ease;
+  }
+
+  .vision-body {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    transition: color 0.4s ease;
+  }
+
+  .vision-body strong { color: var(--text); font-weight: 500; transition: color 0.4s ease; }
+
+  .vision-kicker {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--vision-kicker-color);
+    margin-top: 36px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    line-height: 1.4;
+    transition: color 0.4s ease, border-color 0.4s ease;
+  }
+
+  /* ── ALTAR ── */
+  .altar-section {
+    background: var(--altar-bg);
+    padding: 72px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s ease;
+  }
+
+  .altar-bg-glow {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 250px;
+    background: radial-gradient(ellipse, rgba(201,98,47,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .altar-inner { position: relative; z-index: 2; }
+
+  .altar-section .section-label {
+    color: var(--altar-label-color);
+    text-align: center;
+    transition: color 0.4s ease;
+  }
+
+  .altar-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--altar-headline-color);
+    margin-bottom: 20px;
+    line-height: 1.1;
+    transition: color 0.4s ease;
+  }
+
+  .altar-body {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--altar-body-color);
+    margin-bottom: 40px;
+    transition: color 0.4s ease;
+  }
+
+  .altar-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--altar-divider-color);
+    opacity: var(--altar-divider-opacity);
+    margin: 0 auto 36px;
+    transition: background 0.4s ease, opacity 0.4s ease;
+  }
+
+  .altar-times {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--altar-times-color);
+    margin-bottom: 10px;
+    transition: color 0.4s ease;
+  }
+
+  .altar-address {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--altar-address-color);
+    margin-bottom: 32px;
+    line-height: 1.7;
+    transition: color 0.4s ease;
+  }
+
+  .altar-address a {
+    color: var(--altar-link-color);
+    text-decoration: var(--altar-link-decoration);
+    transition: color 0.4s ease;
+  }
+
+  .altar-address a:hover { text-decoration: underline; }
+
+  .altar-cta {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--altar-cta-color);
+    background: var(--altar-cta-bg);
+    padding: 15px 40px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s, color 0.4s ease;
+  }
+
+  .altar-cta:hover { background: var(--altar-cta-hover-bg); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--footer-bg);
+    padding: 48px 20px 32px;
+    border-top: 1px solid var(--footer-border);
+    transition: background 0.4s ease, border-color 0.4s ease;
+  }
+
+  .footer-brand { margin-bottom: 36px; }
+
+  .footer-wordmark {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--footer-wordmark);
+    display: block;
+    margin-bottom: 12px;
+    transition: color 0.4s ease;
+  }
+
+  .footer-tagline {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--footer-tagline);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    transition: color 0.4s ease;
+  }
+
+  .footer-social { display: flex; gap: 12px; margin-bottom: 36px; }
+
+  .footer-social a {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--footer-social-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--footer-social-color);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .footer-social a:hover { border-color: var(--accent); color: var(--accent); }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
+  .footer-col-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--footer-col-title);
+    margin-bottom: 16px;
+    transition: color 0.4s ease;
+  }
+
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+  .footer-links a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--footer-link);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--footer-link-hover); }
+
+  .footer-bottom {
+    padding-top: 24px;
+    border-top: 1px solid var(--footer-border);
+  }
+
+  .footer-copy {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: var(--footer-copy);
+    margin-bottom: 6px;
+    transition: color 0.4s ease;
+  }
+
+  .footer-address {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: var(--footer-addr);
+    line-height: 1.6;
+    transition: color 0.4s ease;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── THEME TOGGLE (preview tool — remove before launch) ── */
+  .theme-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background 0.4s ease;
+  }
+
+  .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+  .toggle-track {
+    width: 34px;
+    height: 18px;
+    background: var(--border);
+    border-radius: 9px;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  [data-theme="light"] .toggle-track { background: var(--accent); }
+
+  .toggle-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 12px;
+    height: 12px;
+    background: var(--text-muted);
+    border-radius: 50%;
+    transition: left 0.3s, background 0.3s;
+  }
+
+  [data-theme="light"] .toggle-thumb {
+    left: 19px;
+    background: #fff;
+  }
+
+  .toggle-label { text-transform: uppercase; letter-spacing: 0.12em; }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     DESKTOP
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  @media (min-width: 768px) {
+    :root { --nav-h: 72px; }
+
+    nav { padding: 0 48px; }
+    .nav-links { display: flex; }
+    .nav-mobile-cta { display: none; }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 72px 48px 80px;
+    }
+
+    .slide-bg { display: block; }
+    .hero-rule { display: block; }
+    .slide-indicators { display: flex; }
+
+    .hero-content { padding: 0 0 0 32px; max-width: 860px; }
+    .hero-eyebrow { font-size: 11px; margin-bottom: 32px; }
+    .hero-headline { font-size: clamp(40px, 5.8vw, 80px); margin-bottom: 28px; }
+    .hero-subline-wrap { height: 52px; margin-bottom: 48px; }
+    .hero-subline { font-size: 17px; }
+
+    .hero-image-wrap { display: none; }
+    .hero-dots { display: none; }
+
+    .hero-actions { padding: 0; flex-direction: row; align-items: center; gap: 32px; }
+    .btn-primary { text-align: left; }
+
+    .hero-bottom-rule { position: absolute; bottom: 0; left: 0; right: 0; }
+
+    .sermon-section { padding: 96px 48px; }
+    .sermon-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1100px;
+    }
+    .sermon-title { font-size: clamp(26px, 3vw, 40px); }
+
+    .vision-section { padding: 120px 48px; }
+    .vision-headline { font-size: clamp(32px, 4vw, 56px); }
+    .vision-kicker { font-size: clamp(18px, 2.2vw, 26px); }
+
+    .altar-section { padding: 120px 48px; }
+    .altar-inner { max-width: 680px; margin: 0 auto; }
+    .altar-headline { font-size: clamp(32px, 4vw, 54px); }
+    .altar-times { font-size: clamp(22px, 2.5vw, 32px); }
+
+    footer { padding: 60px 48px 40px; }
+    .footer-brand { margin-bottom: 0; }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+
+    .footer-grid { display: contents; }
+    .footer-social { margin-bottom: 0; }
+
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; }
+    .footer-address { text-align: right; margin-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- THEME TOGGLE — preview tool, remove before launch -->
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+  <div class="toggle-track"><div class="toggle-thumb"></div></div>
+  <span class="toggle-label" id="toggle-label">Light</span>
+</button>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg class="logo-mark" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 8 C40 8 40 38 40 52" stroke="var(--logo-color)" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M40 20 C30 10 14 12 10 22 C18 22 30 26 40 36" fill="var(--logo-color)" opacity="0.85"/>
+      <path d="M40 20 C50 10 66 12 70 22 C62 22 50 26 40 36" fill="var(--logo-color)" opacity="0.85"/>
+      <path d="M40 8 C40 8 36 2 40 0 C44 2 40 8 40 8" fill="var(--logo-color)" opacity="0.7"/>
+    </svg>
+    <span class="logo-wordmark">Lifepointe</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">I'm New</a></li>
+    <li><a href="#">Watch</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Events</a></li>
+    <li><a href="#">Give</a></li>
+    <li><a href="#" class="nav-cta">Plan Your Visit</a></li>
+  </ul>
+  <a href="#" class="nav-mobile-cta">Plan Your Visit</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="slide-bg slide-bg-1 active"></div>
+  <div class="slide-bg slide-bg-2"></div>
+  <div class="slide-bg slide-bg-3"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-rule"></div>
+
+  <div class="slide-indicators">
+    <div class="indicator active" data-target="0"></div>
+    <div class="indicator" data-target="1"></div>
+    <div class="indicator" data-target="2"></div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Westfield, Indiana</p>
+    <h1 class="hero-headline">
+      <span class="hero-phrase highlighted" data-phrase="0">People of a Book<span class="dot">.</span></span>
+      <span class="hero-phrase" data-phrase="1">People of His Presence<span class="dot">.</span></span>
+      <span class="hero-phrase" data-phrase="2">People on a Mission<span class="dot">.</span></span>
+    </h1>
+    <div class="hero-subline-wrap">
+      <p class="hero-subline active" data-sub="0">A community submitted to the authority of Scripture.</p>
+      <p class="hero-subline" data-sub="1">We are pursuing a Person who saves, heals and delivers.</p>
+      <p class="hero-subline" data-sub="2">Serving the people of Westfield with the love of God.</p>
+    </div>
+  </div>
+
+  <!-- Mobile inline image (hidden on desktop) -->
+  <div class="hero-image-wrap">
+    <div class="hero-img hero-img-1 active"></div>
+    <div class="hero-img hero-img-2"></div>
+    <div class="hero-img hero-img-3"></div>
+  </div>
+
+  <!-- Mobile dot indicators -->
+  <div class="hero-dots">
+    <div class="hero-dot active" data-target="0"></div>
+    <div class="hero-dot" data-target="1"></div>
+    <div class="hero-dot" data-target="2"></div>
+  </div>
+
+  <div class="hero-actions">
+    <a href="#" class="btn-primary">Plan Your Visit</a>
+    <div class="hero-service-info">
+      <strong>Sundays at 10AM</strong><br>
+      3233 West 166th Street, Westfield, IN &nbsp;·&nbsp; <a href="#">Get Directions</a>
+    </div>
+  </div>
+
+  <div class="hero-bottom-rule"></div>
+</section>
+
+<!-- SERMON -->
+<section class="sermon-section">
+  <p class="section-label">The Word, Every Week</p>
+  <div class="sermon-card">
+    <div class="sermon-thumb">
+      <div class="sermon-thumb-placeholder">
+        <div class="play-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path class="play-icon-fill" d="M8 5.14v14l11-7-11-7z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="sermon-meta">
+      <span class="sermon-series">Current Series</span>
+      <h2 class="sermon-title">Sermon Title Goes Here</h2>
+      <p class="sermon-date">May 4, 2025 &nbsp;·&nbsp; Pastor Josh</p>
+      <p class="sermon-desc">A short description of the message pulled from the YouTube video description. Two or three sentences that give a sense of what was preached.</p>
+      <div class="sermon-actions">
+        <a href="#" class="btn-primary" style="font-size:12px; padding: 11px 24px;">Watch Now</a>
+        <a href="#" class="sermon-link">
+          All Sermons
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path class="sermon-arrow" d="M5 12h14M13 6l6 6-6 6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision-section">
+  <!-- Dark theme: accent glow -->
+  <div class="vision-glow"></div>
+  <!-- Light theme: decorative leaf mark -->
+  <svg class="vision-leaf" width="400" height="400" viewBox="0 0 80 80" fill="none">
+    <path d="M40 8 C40 8 40 38 40 52" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M40 20 C30 10 14 12 10 22 C18 22 30 26 40 36" fill="var(--accent)"/>
+    <path d="M40 20 C50 10 66 12 70 22 C62 22 50 26 40 36" fill="var(--accent)"/>
+    <path d="M40 8 C40 8 36 2 40 0 C44 2 40 8 40 8" fill="var(--accent)"/>
+  </svg>
+  <div class="vision-inner">
+    <p class="section-label">Our Vision</p>
+    <h2 class="vision-headline">We're Building Something<br>in Westfield.</h2>
+    <p class="vision-body">
+      Lifepointe exists to see Westfield transformed by the presence and power of Jesus. We call it <strong>"In Indy as it is in Heaven."</strong> What God does in his people should visibly change the city around them.
+    </p>
+    <p class="vision-body">
+      We are not waiting for revival to come to Indiana. We are becoming a place of revival that sends it out.
+    </p>
+    <p class="vision-kicker">Ambassadors of Christ don't just attend a church. They carry one.</p>
+  </div>
+</section>
+
+<!-- ALTAR -->
+<section class="altar-section">
+  <div class="altar-bg-glow"></div>
+  <div class="altar-inner">
+    <p class="section-label" style="text-align:center;">Join Us</p>
+    <h2 class="altar-headline">The Altar is Always Open.</h2>
+    <p class="altar-body">
+      Repentance, surrender, and encounter are not special occasions at Lifepointe. They are every Sunday. Come as you are. Expect to leave different.
+    </p>
+    <div class="altar-divider"></div>
+    <p class="altar-times">Sundays at 10AM</p>
+    <p class="altar-address">
+      3233 West 166th Street, Westfield, IN<br>
+      <a href="#">Get Directions</a>
+    </p>
+    <a href="#" class="altar-cta">Plan Your Visit</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top-grid">
+    <div class="footer-brand">
+      <span class="footer-wordmark">Lifepointe</span>
+      <p class="footer-tagline">A church in Westfield pursuing<br>Jesus over everything.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-col-title">Visit</p>
+        <ul class="footer-links">
+          <li><a href="#">I'm New</a></li>
+          <li><a href="#">Plan Your Visit</a></li>
+          <li><a href="#">Kids Ministry</a></li>
+          <li><a href="#">Events</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Connect</p>
+        <ul class="footer-links">
+          <li><a href="#">Groups</a></li>
+          <li><a href="#">Missions</a></li>
+          <li><a href="#">Prayer</a></li>
+          <li><a href="#">Give</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">About</p>
+        <ul class="footer-links">
+          <li><a href="#">Who We Are</a></li>
+          <li><a href="#">Staff &amp; Team</a></li>
+          <li><a href="#">Beliefs</a></li>
+          <li><a href="#">Faith Montessori</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2025 Lifepointe Church. All rights reserved.</p>
+    <p class="footer-address">3233 West 166th Street, Westfield, IN 46074 &nbsp;·&nbsp; info@lpcwestfield.com</p>
+  </div>
+</footer>
+
+<script>
+  /* ── Slideshow ── */
+  const SLIDE_DURATION = 4000;
+  let current = 0;
+  let started = false;
+
+  const slideBgs   = document.querySelectorAll('.slide-bg');
+  const phrases    = document.querySelectorAll('.hero-phrase');
+  const sublines   = document.querySelectorAll('.hero-subline');
+  const indicators = document.querySelectorAll('.indicator');
+  const heroImgs   = document.querySelectorAll('.hero-img');
+  const heroDots   = document.querySelectorAll('.hero-dot');
+
+  function goTo(index) {
+    slideBgs[current]?.classList.remove('active');
+    sublines[current]?.classList.remove('active');
+    indicators[current]?.classList.remove('active');
+    heroImgs[current]?.classList.remove('active');
+    heroDots[current]?.classList.remove('active');
+    phrases[current]?.classList.remove('highlighted');
+
+    slideBgs[index]?.classList.add('active');
+    sublines[index]?.classList.add('active');
+    indicators[index]?.classList.add('active');
+    heroImgs[index]?.classList.add('active');
+    heroDots[index]?.classList.add('active');
+    phrases[index]?.classList.add('highlighted');
+
+    current = index;
+  }
+
+  function startCycle() {
+    if (started) return;
+    started = true;
+    setInterval(() => goTo((current + 1) % 3), SLIDE_DURATION);
+  }
+
+  setTimeout(startCycle, 1400);
+
+  [...indicators, ...heroDots].forEach(el => {
+    el.addEventListener('click', () => goTo(parseInt(el.dataset.target)));
+  });
+
+  /* ── Theme toggle ── */
+  function toggleTheme() {
+    const html  = document.documentElement;
+    const label = document.getElementById('toggle-label');
+    if (html.dataset.theme === 'dark') {
+      html.dataset.theme = 'light';
+      label.textContent  = 'Dark';
+    } else {
+      html.dataset.theme = 'dark';
+      label.textContent  = 'Light';
+    }
+  }
+</script>
+
+</body>
+</html>
