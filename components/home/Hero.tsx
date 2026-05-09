@@ -50,11 +50,8 @@ export function Hero() {
 
   return (
     <section
-      className="relative overflow-hidden"
-      style={{
-        paddingTop: 'var(--nav-h, 60px)',
-        background: 'var(--lp-bg)',
-      }}
+      className="relative overflow-hidden pt-[60px] md:pt-[72px]"
+      style={{ background: 'var(--lp-bg)' }}
     >
       {/* Desktop slide backgrounds */}
       {[1, 2, 3].map(i => (
@@ -119,17 +116,15 @@ export function Hero() {
 
       {/* Hero content */}
       <div
-        className="relative z-[5] pt-12 px-5 md:pt-0 md:px-8 md:pl-20 md:max-w-[860px]"
-        style={{
-          paddingTop: undefined,
-        }}
+        className="relative z-[5] pt-12 px-5 md:pt-20 md:px-8 md:pl-20 md:max-w-[860px]"
+        style={{}}
       >
         {/* Headlines */}
         <h1
           className="font-black leading-[1.1] tracking-[-0.01em] mb-3.5 md:mb-7"
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(22px, 7.5vw, 36px)',
+            fontSize: 'clamp(22px, 6vw, 72px)',
           }}
         >
           {phrases.map((p, i) => (
