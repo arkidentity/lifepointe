@@ -180,7 +180,7 @@ export function Hero() {
 
       {/* Mobile inline image with subtitle overlay */}
       <div
-        className="relative w-full md:hidden overflow-hidden mb-6"
+        className="relative w-full md:hidden overflow-hidden mb-6 -mt-12 z-[1]"
         style={{
           aspectRatio: '4 / 3',
           opacity: 0,
@@ -199,6 +199,15 @@ export function Hero() {
             }}
           />
         ))}
+
+        {/* Top fade — blends image into page bg */}
+        <div
+          className="absolute top-0 left-0 right-0 z-20 pointer-events-none"
+          style={{
+            height: '96px',
+            background: 'linear-gradient(to bottom, var(--lp-bg) 0%, transparent 100%)',
+          }}
+        />
 
         {/* Subtitle overlay */}
         <div
