@@ -124,15 +124,13 @@ export function Navbar() {
           Plan Your Visit
         </Link>
         <Sheet>
-          <SheetTrigger asChild>
-            <button
-              aria-label="Open menu"
-              className="flex flex-col justify-center gap-[5px] w-8 h-8"
-            >
-              <span className="block w-5 h-px" style={{ background: 'var(--lp-text)' }} />
-              <span className="block w-5 h-px" style={{ background: 'var(--lp-text)' }} />
-              <span className="block w-3 h-px" style={{ background: 'var(--lp-text)' }} />
-            </button>
+          <SheetTrigger
+            aria-label="Open menu"
+            className="flex flex-col justify-center gap-[5px] w-8 h-8 bg-transparent border-0 p-0 cursor-pointer"
+          >
+            <span className="block w-5 h-px" style={{ background: 'var(--lp-text)' }} />
+            <span className="block w-5 h-px" style={{ background: 'var(--lp-text)' }} />
+            <span className="block w-3 h-px" style={{ background: 'var(--lp-text)' }} />
           </SheetTrigger>
           <SheetContent
             side="right"
