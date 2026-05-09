@@ -204,13 +204,13 @@ export function Hero() {
         <div
           className="absolute bottom-0 left-0 right-0 z-10"
           style={{
-            background: 'rgba(8, 14, 24, 0.82)',
+            background: 'var(--lp-hero-caption-bg)',
             backdropFilter: 'blur(10px)',
             WebkitBackdropFilter: 'blur(10px)',
             borderLeft: '3px solid var(--lp-accent)',
           }}
         >
-          <div className="relative px-4" style={{ height: '72px' }}>
+          <div className="relative" style={{ minHeight: '72px', padding: '16px' }}>
             {phrases.map((p, i) => (
               <p
                 key={i}
@@ -220,6 +220,7 @@ export function Hero() {
                   top: '16px',
                   left: '16px',
                   right: '16px',
+                  bottom: '16px',
                   fontFamily: 'var(--font-body)',
                   fontSize: '20px',
                   color: '#F0EBE0',
