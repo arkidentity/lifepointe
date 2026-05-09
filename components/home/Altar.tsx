@@ -37,8 +37,8 @@ export function Altar() {
           className="text-[17px] leading-[1.85] mb-10"
           style={{ fontFamily: 'var(--font-body)', color: 'var(--lp-altar-body-color)' }}
         >
-          Repentance, surrender, and encounter are not special occasions at Lifepointe. They are every
-          Sunday. Come as you are. Expect to leave different.
+          Every Sunday is an opportunity to experience repentance, surrender, and encounter the love of
+          God. Come as you are. Expect to leave different.
         </p>
 
         {/* Divider */}
