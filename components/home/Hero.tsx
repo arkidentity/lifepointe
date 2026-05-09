@@ -219,7 +219,7 @@ export function Hero() {
             borderLeft: '3px solid var(--lp-accent)',
           }}
         >
-          <div className="relative" style={{ minHeight: '72px', padding: '16px' }}>
+          <div className="relative" style={{ minHeight: '100px', padding: '16px 16px 20px' }}>
             {phrases.map((p, i) => (
               <p
                 key={i}
@@ -229,7 +229,6 @@ export function Hero() {
                   top: '16px',
                   left: '16px',
                   right: '16px',
-                  bottom: '16px',
                   fontFamily: 'var(--font-body)',
                   fontSize: '20px',
                   color: '#F0EBE0',
