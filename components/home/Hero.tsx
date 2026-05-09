@@ -119,7 +119,7 @@ export function Hero() {
 
       {/* Hero content */}
       <div
-        className="relative z-[5] pt-7 px-5 md:pt-0 md:px-8 md:pl-20 md:max-w-[860px]"
+        className="relative z-[5] pt-12 px-5 md:pt-0 md:px-8 md:pl-20 md:max-w-[860px]"
         style={{
           paddingTop: undefined,
         }}
