@@ -306,6 +306,13 @@ export function Hero() {
             Get Directions
           </a>
         </p>
+        <p
+          className="text-[15px] mt-2 md:mt-3"
+          style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-text-muted)' }}
+        >
+          <span style={{ color: 'var(--lp-accent)', fontWeight: 600 }}>Lifepointe Kids</span>
+          {' '}· Infant – Grade 5
+        </p>
       </div>
 
       {/* Bottom rule */}
