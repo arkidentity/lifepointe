@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import derekImg from '@/images/team/derek-van-dyke-kids.png'
