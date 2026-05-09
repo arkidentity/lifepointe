@@ -80,7 +80,7 @@ export function Altar() {
           </a>
         </p>
         <Link
-          href="/im-new"
+          href="/visit"
           className="inline-block text-[13px] font-medium tracking-[0.12em] uppercase no-underline px-10 py-[15px] transition-all duration-200 hover:-translate-y-px"
           style={{
             fontFamily: 'var(--font-ui)',
