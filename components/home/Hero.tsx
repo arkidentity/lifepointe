@@ -132,7 +132,7 @@ export function Hero() {
           className="font-black leading-[1.1] tracking-[-0.01em] mb-3.5 md:mb-7"
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(22px, 6vw, 72px)',
+            fontSize: 'clamp(22px, 5.2vw, 62px)',
           }}
         >
           {phrases.map((p, i) => (
