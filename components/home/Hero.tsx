@@ -14,15 +14,15 @@ const heroImages = [
 const phrases = [
   {
     text: 'People of a Book',
-    sub: 'A community submitted to the authority of Scripture.',
+    sub: 'Pursuing the One who saves, heals and delivers.',
   },
   {
     text: 'People of His Presence',
-    sub: 'We are pursuing a Person who saves, heals and delivers.',
+    sub: 'Pursuing the One who saves, heals and delivers.',
   },
   {
     text: 'People on a Mission',
-    sub: 'Serving the people of Westfield with the love of God.',
+    sub: 'Pursuing the One who saves, heals and delivers.',
   },
 ]
 
@@ -152,30 +152,18 @@ export function Hero() {
         </h1>
 
         {/* Subline — desktop only */}
-        <div
-          className="relative overflow-hidden mb-12 hidden md:block"
+        <p
+          className="italic leading-[1.6] mb-12 hidden md:block"
           style={{
-            height: '44px',
+            fontFamily: 'var(--font-body)',
+            fontSize: '16px',
+            color: 'var(--lp-text)',
             opacity: 0,
             animation: 'fadeUp 0.6s ease forwards 0.9s',
           }}
         >
-          {phrases.map((p, i) => (
-            <p
-              key={i}
-              className="absolute top-0 left-0 right-0 italic leading-[1.6] transition-all duration-700 ease-in-out"
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '16px',
-                color: 'var(--lp-text)',
-                opacity: current === i ? 0.75 : 0,
-                transform: current === i ? 'translateY(0)' : 'translateY(8px)',
-              }}
-            >
-              {p.sub}
-            </p>
-          ))}
-        </div>
+          {phrases[0].sub}
+        </p>
       </div>
 
       {/* Mobile inline image with subtitle overlay */}
@@ -210,26 +198,17 @@ export function Hero() {
             borderLeft: '3px solid var(--lp-accent)',
           }}
         >
-          <div className="relative px-4" style={{ height: '72px' }}>
-            {phrases.map((p, i) => (
-              <p
-                key={i}
-                className="italic leading-[1.5] transition-all duration-700 ease-in-out m-0"
-                style={{
-                  position: 'absolute',
-                  top: '16px',
-                  left: '16px',
-                  right: '16px',
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '20px',
-                  color: '#F0EBE0',
-                  opacity: current === i ? 1 : 0,
-                  transform: current === i ? 'translateY(0)' : 'translateY(6px)',
-                }}
-              >
-                {p.sub}
-              </p>
-            ))}
+          <div className="px-4 py-4">
+            <p
+              className="italic leading-[1.5] m-0"
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '20px',
+                color: '#F0EBE0',
+              }}
+            >
+              {phrases[0].sub}
+            </p>
           </div>
         </div>
       </div>
