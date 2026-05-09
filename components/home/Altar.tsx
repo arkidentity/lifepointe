@@ -51,17 +51,17 @@ export function Altar() {
         />
 
         <p
-          className="font-bold mb-2.5"
+          className="font-bold mb-3"
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(22px, 2.5vw, 32px)',
+            fontSize: 'clamp(26px, 2.5vw, 36px)',
             color: 'var(--lp-altar-times-color)',
           }}
         >
           Sundays at 10AM
         </p>
         <p
-          className="text-[13px] leading-[1.7] mb-8"
+          className="text-[15px] leading-[1.8] mb-8"
           style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-altar-address-color)' }}
         >
           3233 West 166th Street, Westfield, IN

@@ -124,19 +124,6 @@ export function Hero() {
           paddingTop: undefined,
         }}
       >
-        {/* Eyebrow */}
-        <p
-          className="text-[10px] md:text-[11px] font-medium tracking-[0.2em] uppercase mb-4 md:mb-8"
-          style={{
-            fontFamily: 'var(--font-ui)',
-            color: 'var(--lp-accent)',
-            opacity: 0,
-            animation: 'fadeUp 0.6s ease forwards 0.2s',
-          }}
-        >
-          Westfield, Indiana
-        </p>
-
         {/* Headlines */}
         <h1
           className="font-black leading-[1.1] tracking-[-0.01em] mb-3.5 md:mb-7"
@@ -176,9 +163,9 @@ export function Hero() {
               className="absolute top-0 left-0 right-0 italic leading-[1.6] transition-all duration-700 ease-in-out"
               style={{
                 fontFamily: 'var(--font-body)',
-                fontSize: '15px',
-                color: 'var(--lp-text-muted)',
-                opacity: current === i ? 1 : 0,
+                fontSize: '16px',
+                color: 'var(--lp-text)',
+                opacity: current === i ? 0.75 : 0,
                 transform: current === i ? 'translateY(0)' : 'translateY(8px)',
               }}
             >
@@ -266,17 +253,17 @@ export function Hero() {
           Plan Your Visit
         </Link>
         <div
-          className="text-[13px] leading-[1.7]"
+          className="text-[15px] leading-[1.75]"
           style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-text-muted)' }}
         >
-          <strong style={{ color: 'var(--lp-text)', fontWeight: 500 }}>Sundays at 10AM</strong>
+          <strong style={{ color: 'var(--lp-text)', fontWeight: 600, fontSize: '17px' }}>Sundays at 10AM</strong>
           <br />
           3233 West 166th Street, Westfield, IN{' '}
           <a
             href="https://maps.google.com/?q=3233+West+166th+Street+Westfield+IN"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[12px] no-underline hover:underline"
+            className="text-[14px] no-underline hover:underline"
             style={{ color: 'var(--lp-accent)' }}
           >
             Get Directions

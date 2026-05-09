@@ -11,7 +11,7 @@ export function Vision() {
       <div
         className="dark:block hidden absolute top-1/2 -right-[100px] -translate-y-1/2 w-[400px] h-[400px] pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(201,98,47,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(47,143,132,0.08) 0%, transparent 70%)',
         }}
       />
 

@@ -16,7 +16,7 @@ export function SermonPreview() {
         className="text-[11px] font-medium tracking-[0.2em] uppercase mb-8"
         style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-accent)' }}
       >
-        The Word, Every Week
+        Recent Sermon
       </p>
 
       <div className="flex flex-col md:grid md:grid-cols-2 gap-7 md:gap-16 md:max-w-[1100px] md:items-center">
@@ -54,12 +54,6 @@ export function SermonPreview() {
 
         {/* Meta */}
         <div className="flex flex-col gap-3">
-          <span
-            className="text-[11px] font-medium tracking-[0.15em] uppercase"
-            style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-accent)' }}
-          >
-            Current Series
-          </span>
           <h2
             className="font-bold leading-[1.15]"
             style={{
@@ -71,14 +65,14 @@ export function SermonPreview() {
             Sermon Title Goes Here
           </h2>
           <p
-            className="text-[13px]"
+            className="text-[14px]"
             style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-text-muted)' }}
           >
             May 4, 2025 &nbsp;·&nbsp; Pastor Josh
           </p>
           <p
-            className="text-[15px] leading-[1.75]"
-            style={{ fontFamily: 'var(--font-body)', color: 'var(--lp-text-muted)' }}
+            className="text-[16px] leading-[1.75]"
+            style={{ fontFamily: 'var(--font-body)', color: 'var(--lp-text)' }}
           >
             A short description of the message pulled from the YouTube video description. Two or three
             sentences that give a sense of what was preached.
