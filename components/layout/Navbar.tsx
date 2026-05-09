@@ -57,7 +57,7 @@ export function Navbar() {
       {/* Logo */}
       <Link href="/" className="flex items-center no-underline">
         <span
-          className="text-[18px] font-bold tracking-[0.02em]"
+          className="text-[18px] md:text-[23px] font-bold tracking-[0.02em]"
           style={{ fontFamily: 'var(--font-display)', color: 'var(--lp-text)' }}
         >
           Lifepointe

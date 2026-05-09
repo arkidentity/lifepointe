@@ -242,7 +242,7 @@
 
   --lp-hero-overlay:
     linear-gradient(to bottom, rgba(0,0,0,0.36) 0%, rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.65) 100%);
-  --lp-hero-caption-bg: rgba(8, 14, 24, 0.78);
+  --lp-hero-caption-bg: rgba(8, 14, 24, 0.52);
 
   --lp-sermon-thumb-bg:      radial-gradient(ellipse at center, #0D2E28 0%, #111111 100%);
   --lp-play-btn-bg:          transparent;

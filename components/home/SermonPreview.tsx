@@ -11,15 +11,7 @@ export function SermonPreview() {
         borderColor: 'var(--lp-border)',
       }}
     >
-      {/* Section label */}
-      <p
-        className="text-[11px] font-medium tracking-[0.2em] uppercase mb-8"
-        style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-accent)' }}
-      >
-        Recent Sermon
-      </p>
-
-      <div className="flex flex-col md:grid md:grid-cols-2 gap-7 md:gap-16 md:max-w-[1100px] md:items-center">
+<div className="flex flex-col md:grid md:grid-cols-2 gap-7 md:gap-16 md:max-w-[1100px] md:items-center">
         {/* Thumbnail */}
         <div className="relative" style={{ aspectRatio: '16/9' }}>
           <div
@@ -78,19 +70,6 @@ export function SermonPreview() {
             sentences that give a sense of what was preached.
           </p>
           <div className="flex items-center gap-4 mt-1">
-            <Link
-              href="/watch"
-              className="inline-block text-[12px] font-medium tracking-[0.1em] uppercase no-underline px-6 py-[11px] transition-all duration-200 hover:-translate-y-px"
-              style={{
-                fontFamily: 'var(--font-ui)',
-                color: 'var(--lp-btn-text)',
-                background: 'var(--lp-accent)',
-              }}
-              onMouseEnter={e => ((e.currentTarget as HTMLElement).style.background = 'var(--lp-accent-hover)')}
-              onMouseLeave={e => ((e.currentTarget as HTMLElement).style.background = 'var(--lp-accent)')}
-            >
-              Watch Now
-            </Link>
             <Link
               href="/watch"
               className="flex items-center gap-2 text-[12px] font-medium tracking-[0.1em] uppercase no-underline transition-colors duration-200 group"

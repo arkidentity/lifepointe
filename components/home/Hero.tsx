@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
 const SLIDE_DURATION = 4000
@@ -129,24 +128,26 @@ export function Hero() {
       >
         {/* Headlines */}
         <h1
-          className="font-black leading-[1.1] tracking-[-0.01em] mb-3.5 md:mb-7"
+          className="font-black leading-[1.15] tracking-[-0.01em] mb-3.5 md:mb-7"
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(22px, 5.2vw, 62px)',
+            fontSize: 'clamp(26px, 5.2vw, 62px)',
           }}
         >
           {phrases.map((p, i) => (
             <span
               key={i}
-              className="block transition-colors duration-[600ms] ease-in-out"
+              className="block"
               style={{
                 color: current === i ? 'var(--lp-hero-phrase-active)' : 'var(--lp-hero-phrase-dim)',
+                transform: current === i ? 'scale(1.04)' : 'scale(1)',
+                transformOrigin: 'left center',
+                transition: 'color 600ms ease-in-out, transform 400ms ease-in-out',
                 opacity: 0,
                 animation: `fadeUp 0.7s ease forwards ${0.35 + i * 0.2}s`,
               }}
             >
-              {p.text}
-              <span style={{ color: 'var(--lp-accent)' }}>.</span>
+              {p.text}<span style={{ color: current === i ? 'var(--lp-hero-phrase-active)' : 'var(--lp-hero-phrase-dim)', transition: 'color 600ms ease-in-out' }}>.</span>
             </span>
           ))}
         </h1>
@@ -155,7 +156,7 @@ export function Hero() {
         <div
           className="relative overflow-hidden mb-12 hidden md:block"
           style={{
-            height: '44px',
+            height: '56px',
             opacity: 0,
             animation: 'fadeUp 0.6s ease forwards 0.9s',
           }}
@@ -166,9 +167,9 @@ export function Hero() {
               className="absolute top-0 left-0 right-0 italic leading-[1.6] transition-all duration-700 ease-in-out"
               style={{
                 fontFamily: 'var(--font-body)',
-                fontSize: '16px',
+                fontSize: '20px',
                 color: 'var(--lp-text)',
-                opacity: current === i ? 0.75 : 0,
+                opacity: current === i ? 0.8 : 0,
                 transform: current === i ? 'translateY(0)' : 'translateY(8px)',
               }}
             >
@@ -219,18 +220,18 @@ export function Hero() {
             borderLeft: '3px solid var(--lp-accent)',
           }}
         >
-          <div className="relative" style={{ minHeight: '100px', padding: '16px 16px 20px' }}>
+          <div className="relative" style={{ minHeight: '60px', padding: '14px 16px 14px' }}>
             {phrases.map((p, i) => (
               <p
                 key={i}
-                className="italic leading-[1.5] transition-all duration-700 ease-in-out m-0"
+                className="italic leading-[1.45] transition-all duration-700 ease-in-out m-0"
                 style={{
                   position: 'absolute',
-                  top: '16px',
+                  top: '14px',
                   left: '16px',
                   right: '16px',
                   fontFamily: 'var(--font-body)',
-                  fontSize: '20px',
+                  fontSize: '15px',
                   color: '#F0EBE0',
                   opacity: current === i ? 1 : 0,
                   transform: current === i ? 'translateY(0)' : 'translateY(6px)',
@@ -276,44 +277,35 @@ export function Hero() {
         ))}
       </div>
 
-      {/* CTA */}
+      {/* Service info */}
       <div
-        className="px-5 pb-8 flex flex-col md:flex-row items-start md:items-center gap-5 md:gap-8 md:px-8 md:pl-20 md:pb-20"
+        className="px-5 pb-8 md:px-8 md:pl-20 md:pb-20"
         style={{
           opacity: 0,
           animation: 'fadeUp 0.6s ease forwards 1.1s',
         }}
       >
-        <Link
-          href="/im-new"
-          className="inline-block text-center md:text-left text-[13px] font-medium tracking-[0.1em] uppercase no-underline px-8 py-[15px] transition-all duration-200 hover:-translate-y-px"
-          style={{
-            fontFamily: 'var(--font-ui)',
-            color: 'var(--lp-btn-text)',
-            background: 'var(--lp-accent)',
-          }}
-          onMouseEnter={e => ((e.currentTarget as HTMLElement).style.background = 'var(--lp-accent-hover)')}
-          onMouseLeave={e => ((e.currentTarget as HTMLElement).style.background = 'var(--lp-accent)')}
+        <strong
+          className="block mb-1"
+          style={{ color: 'var(--lp-text)', fontWeight: 700, fontSize: 'clamp(22px, 3vw, 30px)', fontFamily: 'var(--font-ui)' }}
         >
-          Plan Your Visit
-        </Link>
-        <div
-          className="text-[15px] leading-[1.75]"
+          Sundays at 10AM
+        </strong>
+        <p
+          className="text-[17px] leading-[1.75]"
           style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-text-muted)' }}
         >
-          <strong style={{ color: 'var(--lp-text)', fontWeight: 600, fontSize: '17px' }}>Sundays at 10AM</strong>
-          <br />
           3233 West 166th Street, Westfield, IN{' '}
           <a
             href="https://maps.google.com/?q=3233+West+166th+Street+Westfield+IN"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[14px] no-underline hover:underline"
+            className="no-underline hover:underline"
             style={{ color: 'var(--lp-accent)' }}
           >
             Get Directions
           </a>
-        </div>
+        </p>
       </div>
 
       {/* Bottom rule */}
