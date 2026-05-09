@@ -2,22 +2,35 @@
 
 import Link from 'next/link'
 
-const visitLinks  = ["I'm New", 'Plan Your Visit', 'Kids Ministry', 'Events']
-const connectLinks = ['Groups', 'Missions', 'Prayer', 'Give']
-const aboutLinks  = ['Who We Are', 'Staff & Team', 'Beliefs', 'Faith Montessori']
+const visitLinks = [
+  { label: 'Plan Your Visit',   href: '/visit' },
+  { label: 'Kids',              href: '/kids' },
+  { label: 'Events',            href: '/events' },
+  { label: 'Watch',             href: '/watch' },
+]
+const connectLinks = [
+  { label: 'Groups',            href: '/groups' },
+  { label: 'Missions',          href: '/missions' },
+  { label: 'Prayer',            href: '/prayer' },
+  { label: 'Give',              href: '/give' },
+]
+const aboutLinks = [
+  { label: 'About',             href: '/about' },
+  { label: 'Faith Montessori',  href: '/faith-montessori' },
+]
 
-function FooterLink({ children }: { children: React.ReactNode }) {
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <li>
-      <a
-        href="#"
+      <Link
+        href={href}
         className="text-[15px] no-underline transition-colors duration-200"
         style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-footer-link)' }}
         onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = 'var(--lp-footer-link-hover)')}
         onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'var(--lp-footer-link)')}
       >
         {children}
-      </a>
+      </Link>
     </li>
   )
 }
@@ -120,8 +133,8 @@ export function Footer() {
                 {title}
               </p>
               <ul className="list-none flex flex-col gap-3">
-                {links.map(l => (
-                  <FooterLink key={l}>{l}</FooterLink>
+                {links.map(({ label, href }) => (
+                  <FooterLink key={href} href={href}>{label}</FooterLink>
                 ))}
               </ul>
             </div>

@@ -6,11 +6,11 @@ import { useEffect, useState } from 'react'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
 const navLinks = [
-  { label: "I'm New", href: '/im-new' },
-  { label: 'Watch',   href: '/watch' },
-  { label: 'About',   href: '/about' },
-  { label: 'Events',  href: '/events' },
-  { label: 'Give',    href: '/give' },
+  { label: 'Watch',  href: '/watch' },
+  { label: 'About',  href: '/about' },
+  { label: 'Kids',   href: '/kids' },
+  { label: 'Events', href: '/events' },
+  { label: 'Give',   href: '/give' },
 ]
 
 function ThemeToggle() {
@@ -81,7 +81,7 @@ export function Navbar() {
         ))}
         <li>
           <Link
-            href="/im-new"
+            href="/visit"
             className="text-[11px] font-medium tracking-[0.12em] uppercase no-underline px-[18px] py-2 border transition-all duration-200"
             style={{
               fontFamily: 'var(--font-ui)',
@@ -113,7 +113,7 @@ export function Navbar() {
       <div className="flex md:hidden items-center gap-3">
         <ThemeToggle />
         <Link
-          href="/im-new"
+          href="/visit"
           className="text-[11px] font-medium tracking-[0.1em] uppercase no-underline px-4 py-2"
           style={{
             fontFamily: 'var(--font-ui)',
@@ -150,7 +150,7 @@ export function Navbar() {
               ))}
             </nav>
             <Link
-              href="/im-new"
+              href="/visit"
               className="text-[12px] font-medium tracking-[0.12em] uppercase no-underline px-6 py-4 text-center"
               style={{
                 fontFamily: 'var(--font-ui)',
