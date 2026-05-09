@@ -5,6 +5,12 @@ import { useEffect, useRef, useState } from 'react'
 
 const SLIDE_DURATION = 4000
 
+const heroImages = [
+  '/images/hero/bible.jpg',
+  '/images/hero/bow-down.jpg',
+  '/images/hero/helping-hand.jpg',
+]
+
 const phrases = [
   {
     text: 'People of a Book',
@@ -54,13 +60,15 @@ export function Hero() {
       style={{ background: 'var(--lp-bg)' }}
     >
       {/* Desktop slide backgrounds */}
-      {[1, 2, 3].map(i => (
+      {heroImages.map((src, i) => (
         <div
           key={i}
-          className="absolute inset-0 opacity-0 transition-opacity duration-[1400ms] ease-in-out z-0 hidden md:block"
+          className="absolute inset-0 transition-opacity duration-[1400ms] ease-in-out z-0 hidden md:block"
           style={{
-            opacity: current === i - 1 ? 1 : 0,
-            background: `var(--lp-slide-bg-${i})`,
+            opacity: current === i ? 1 : 0,
+            backgroundImage: `var(--lp-hero-overlay), url('${src}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
         />
       ))}
@@ -179,13 +187,13 @@ export function Hero() {
           animation: 'fadeUp 0.6s ease forwards 1.0s',
         }}
       >
-        {[1, 2, 3].map(i => (
+        {heroImages.map((src, i) => (
           <div
             key={i}
             className="absolute inset-0 transition-opacity duration-[1200ms] ease-in-out"
             style={{
-              opacity: current === i - 1 ? 1 : 0,
-              background: `var(--lp-hero-img-${i})`,
+              opacity: current === i ? 1 : 0,
+              backgroundImage: `var(--lp-hero-overlay), url('${src}')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
