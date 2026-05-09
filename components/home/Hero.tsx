@@ -148,9 +148,9 @@ export function Hero() {
           ))}
         </h1>
 
-        {/* Subline */}
+        {/* Subline — desktop only */}
         <div
-          className="relative overflow-hidden mb-5 md:mb-12"
+          className="relative overflow-hidden mb-12 hidden md:block"
           style={{
             height: '44px',
             opacity: 0,
@@ -175,11 +175,11 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Mobile inline image */}
+      {/* Mobile inline image with subtitle overlay */}
       <div
         className="relative w-full md:hidden overflow-hidden mb-6"
         style={{
-          aspectRatio: '3 / 2',
+          aspectRatio: '4 / 3',
           opacity: 0,
           animation: 'fadeUp 0.6s ease forwards 1.0s',
         }}
@@ -196,6 +196,39 @@ export function Hero() {
             }}
           />
         ))}
+
+        {/* Subtitle overlay */}
+        <div
+          className="absolute bottom-0 left-0 right-0 z-10"
+          style={{
+            background: 'rgba(8, 14, 24, 0.82)',
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)',
+            borderLeft: '3px solid var(--lp-accent)',
+          }}
+        >
+          <div className="relative px-4" style={{ height: '72px' }}>
+            {phrases.map((p, i) => (
+              <p
+                key={i}
+                className="italic leading-[1.5] transition-all duration-700 ease-in-out m-0"
+                style={{
+                  position: 'absolute',
+                  top: '16px',
+                  left: '16px',
+                  right: '16px',
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '20px',
+                  color: '#F0EBE0',
+                  opacity: current === i ? 1 : 0,
+                  transform: current === i ? 'translateY(0)' : 'translateY(6px)',
+                }}
+              >
+                {p.sub}
+              </p>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Mobile dot indicators */}
