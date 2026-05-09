@@ -193,16 +193,16 @@
   --lp-altar-link-deco:      underline;
 
   --lp-footer-bg:            #111C1B;
-  --lp-footer-border:        rgba(255, 255, 255, 0.06);
+  --lp-footer-border:        rgba(255, 255, 255, 0.10);
   --lp-footer-wordmark:      #F0EBE0;
-  --lp-footer-tagline:       rgba(240, 235, 224, 0.45);
-  --lp-footer-col-title:     rgba(240, 235, 224, 0.30);
-  --lp-footer-link:          rgba(240, 235, 224, 0.45);
+  --lp-footer-tagline:       rgba(240, 235, 224, 0.75);
+  --lp-footer-col-title:     rgba(240, 235, 224, 0.55);
+  --lp-footer-link:          rgba(240, 235, 224, 0.75);
   --lp-footer-link-hover:    #F0EBE0;
-  --lp-footer-copy:          rgba(240, 235, 224, 0.25);
-  --lp-footer-addr:          rgba(240, 235, 224, 0.25);
-  --lp-footer-social-border: rgba(255, 255, 255, 0.10);
-  --lp-footer-social-color:  rgba(240, 235, 224, 0.45);
+  --lp-footer-copy:          rgba(240, 235, 224, 0.60);
+  --lp-footer-addr:          rgba(240, 235, 224, 0.60);
+  --lp-footer-social-border: rgba(255, 255, 255, 0.15);
+  --lp-footer-social-color:  rgba(240, 235, 224, 0.70);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -274,13 +274,13 @@
   --lp-footer-border:        var(--lp-border);
   --lp-footer-wordmark:      var(--lp-text);
   --lp-footer-tagline:       var(--lp-text-muted);
-  --lp-footer-col-title:     rgba(240, 235, 224, 0.25);
-  --lp-footer-link:          rgba(240, 235, 224, 0.45);
+  --lp-footer-col-title:     rgba(240, 235, 224, 0.55);
+  --lp-footer-link:          rgba(240, 235, 224, 0.75);
   --lp-footer-link-hover:    var(--lp-text);
-  --lp-footer-copy:          rgba(240, 235, 224, 0.40);
-  --lp-footer-addr:          rgba(240, 235, 224, 0.40);
-  --lp-footer-social-border: var(--lp-border);
-  --lp-footer-social-color:  var(--lp-text-muted);
+  --lp-footer-copy:          rgba(240, 235, 224, 0.60);
+  --lp-footer-addr:          rgba(240, 235, 224, 0.60);
+  --lp-footer-social-border: rgba(255, 255, 255, 0.15);
+  --lp-footer-social-color:  rgba(240, 235, 224, 0.70);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

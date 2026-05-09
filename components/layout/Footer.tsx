@@ -11,7 +11,7 @@ function FooterLink({ children }: { children: React.ReactNode }) {
     <li>
       <a
         href="#"
-        className="text-[14px] no-underline transition-colors duration-200"
+        className="text-[15px] no-underline transition-colors duration-200"
         style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-footer-link)' }}
         onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = 'var(--lp-footer-link-hover)')}
         onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'var(--lp-footer-link)')}
@@ -42,7 +42,7 @@ export function Footer() {
             Lifepointe
           </span>
           <p
-            className="text-[14px] italic leading-[1.7] mb-5"
+            className="text-[15px] italic leading-[1.7] mb-5"
             style={{ fontFamily: 'var(--font-body)', color: 'var(--lp-footer-tagline)' }}
           >
             A church in Westfield pursuing
@@ -114,7 +114,7 @@ export function Footer() {
           ].map(({ title, links }) => (
             <div key={title}>
               <p
-                className="text-[10px] font-medium tracking-[0.18em] uppercase mb-4"
+                className="text-[12px] font-medium tracking-[0.15em] uppercase mb-4"
                 style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-footer-col-title)' }}
               >
                 {title}
@@ -135,13 +135,13 @@ export function Footer() {
         style={{ borderColor: 'var(--lp-footer-border)' }}
       >
         <p
-          className="text-[11px] mb-1.5 md:mb-0"
+          className="text-[13px] mb-1.5 md:mb-0"
           style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-footer-copy)' }}
         >
           &copy; 2025 Lifepointe Church. All rights reserved.
         </p>
         <p
-          className="text-[11px] leading-[1.6] md:text-right"
+          className="text-[13px] leading-[1.6] md:text-right"
           style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-footer-addr)' }}
         >
           3233 West 166th Street, Westfield, IN 46074 &nbsp;·&nbsp; info@lpcwestfield.com
