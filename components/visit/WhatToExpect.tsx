@@ -49,8 +49,8 @@ export function WhatToExpect() {
           A Sunday at Lifepointe
         </h2>
         <p
-          className="text-[16px] leading-[1.8]"
-          style={{ fontFamily: 'var(--font-body)', color: 'var(--lp-text-muted)' }}
+          className="text-[17px] leading-[1.8]"
+          style={{ fontFamily: 'var(--font-body)', color: 'var(--lp-text)' }}
         >
           About 75 minutes. Come expecting something real.
         </p>
@@ -83,8 +83,8 @@ export function WhatToExpect() {
                 {label}
               </p>
               <p
-                className="text-[15px] leading-[1.85]"
-                style={{ fontFamily: 'var(--font-body)', color: 'var(--lp-text-muted)' }}
+                className="text-[16px] leading-[1.85]"
+                style={{ fontFamily: 'var(--font-body)', color: 'var(--lp-text)' }}
               >
                 {body}
               </p>
@@ -99,7 +99,7 @@ export function WhatToExpect() {
           src={kidsImg}
           alt="Lifepointe Kids"
           fill
-          className="object-cover object-center"
+          className="object-cover object-top"
           sizes="100vw"
         />
       </div>

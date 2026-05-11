@@ -28,19 +28,18 @@ export function LifepointeKids() {
             className="font-black leading-[1.1] mb-6"
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(28px, 3.2vw, 48px)',
+              fontSize: 'clamp(26px, 3.2vw, 48px)',
               color: 'var(--lp-text)',
             }}
           >
-            Discipleship Starts Young.
+            Children aren&apos;t the future of the church — they&apos;re the church right now.
           </h2>
           <p
             className="text-[17px] leading-[1.85] mb-5"
             style={{ fontFamily: 'var(--font-body)', color: 'var(--lp-text-muted)' }}
           >
-            Children aren&apos;t the future of the church — they&apos;re the church right now.
-            Lifepointe Kids runs every Sunday for infants through Grade 5, with age-appropriate
-            environments built for real discipleship.
+            Discipleship starts young. Lifepointe Kids runs every Sunday for infants through
+            Grade 5, with age-appropriate environments built for real growth.
           </p>
           <p
             className="text-[17px] leading-[1.85] mb-10"
