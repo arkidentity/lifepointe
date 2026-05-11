@@ -1,9 +1,9 @@
 export function Vision() {
   return (
     <section
-      className="relative overflow-hidden px-5 py-[72px] md:py-[120px] md:px-12 border-b"
+      className="always-light relative overflow-hidden px-5 py-[72px] md:py-[120px] md:px-12 border-b"
       style={{
-        background: 'var(--lp-vision-bg)',
+        background: 'var(--lp-bg-alt)',
         borderColor: 'var(--lp-border)',
       }}
     >

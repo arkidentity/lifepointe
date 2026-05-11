@@ -1,8 +1,8 @@
 export function VisitContact() {
   return (
     <section
-      className="px-5 py-[64px] md:py-[88px] md:px-12 text-center"
-      style={{ background: 'var(--lp-bg)' }}
+      className="always-light px-5 py-[64px] md:py-[88px] md:px-12 text-center"
+      style={{ background: 'var(--lp-bg-alt)' }}
     >
       <div className="max-w-[480px] mx-auto">
         <p
