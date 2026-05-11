@@ -73,7 +73,7 @@ export function Vision() {
           style={{
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(18px, 2.2vw, 26px)',
-            color: 'var(--lp-vision-kicker-color)',
+            color: 'var(--lp-accent-hover)',
             borderColor: 'var(--lp-border)',
           }}
         >

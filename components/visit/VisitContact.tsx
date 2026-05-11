@@ -19,7 +19,7 @@ export function VisitContact() {
             color: 'var(--lp-text)',
           }}
         >
-          We&apos;re happy to answer anything before you come.
+          We&apos;re here to help before you arrive.
         </h2>
         <p
           className="text-[16px] leading-[1.8] mb-8"
