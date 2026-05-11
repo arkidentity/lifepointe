@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import derekImg from '@/images/team/derek-van-dyke-kids.png'
 import laurenImg from '@/images/team/lauren-van-dyle-kids.png'
+import kidsLogoImg from '@/images/lp-kids.png'
 
 export function LifepointeKids() {
   return (
@@ -14,12 +15,15 @@ export function LifepointeKids() {
       <div className="md:grid md:grid-cols-[1.3fr_1fr] md:gap-16 md:items-start md:max-w-[1100px]">
         {/* Left: content */}
         <div>
-          <p
-            className="text-[11px] font-medium tracking-[0.2em] uppercase mb-5"
-            style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-accent)' }}
-          >
-            Lifepointe Kids
-          </p>
+          <div className="mb-6">
+            <Image
+              src={kidsLogoImg}
+              alt="Lifepointe Kids"
+              width={120}
+              height={120}
+              className="object-contain"
+            />
+          </div>
           <h2
             className="font-black leading-[1.1] mb-6"
             style={{

@@ -3,6 +3,7 @@ import { VisitHero } from '@/components/visit/VisitHero'
 import { WhatToExpect } from '@/components/visit/WhatToExpect'
 import { LifepointeKids } from '@/components/visit/LifepointeKids'
 import { DiscoveryClass } from '@/components/visit/DiscoveryClass'
+import { VisitPhotoStrip } from '@/components/visit/VisitPhotoStrip'
 import { VisitContact } from '@/components/visit/VisitContact'
 
 export const metadata = {
@@ -17,6 +18,7 @@ export default function VisitPage() {
       <WhatToExpect />
       <LifepointeKids />
       <DiscoveryClass />
+      <VisitPhotoStrip />
       <VisitContact />
     </PageLayout>
   )

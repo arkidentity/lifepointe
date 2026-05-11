@@ -1,3 +1,6 @@
+import Image from 'next/image'
+import worshipImg from '@/images/lp-kids1.jpg'
+
 const sundayItems = [
   {
     label: 'Worship',
@@ -20,9 +23,25 @@ const sundayItems = [
 export function WhatToExpect() {
   return (
     <section
-      className="px-5 py-[72px] md:py-[100px] md:px-12 border-b"
+      className="border-b"
       style={{ background: 'var(--lp-bg-alt)', borderColor: 'var(--lp-border)' }}
     >
+      {/* Worship photo strip */}
+      <div className="relative w-full h-[240px] md:h-[340px] overflow-hidden">
+        <Image
+          src={worshipImg}
+          alt="Lifepointe worship service"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.35) 100%)' }}
+        />
+      </div>
+
+      <div className="px-5 py-[72px] md:py-[100px] md:px-12">
       <div className="md:grid md:grid-cols-[1fr_1.4fr] md:gap-16 md:max-w-[1100px]">
         {/* Left: label + headline */}
         <div className="mb-10 md:mb-0 md:pt-1">
@@ -79,6 +98,7 @@ export function WhatToExpect() {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   )
