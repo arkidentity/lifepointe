@@ -1,8 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-import baptismImg from '@/images/lp-kids2.jpg'
-
 export function DiscoveryClass() {
   return (
     <section
@@ -10,18 +7,8 @@ export function DiscoveryClass() {
       style={{ background: 'var(--lp-surface)', borderColor: 'var(--lp-border)' }}
     >
       <div className="md:grid md:grid-cols-[1fr_1.2fr] md:gap-20 md:items-center md:max-w-[1100px]">
-        {/* Left: photo + headline */}
+        {/* Left: label + headline */}
         <div className="mb-10 md:mb-0">
-          {/* Baptism photo */}
-          <div className="relative w-full aspect-[1920/1226] overflow-hidden mb-8">
-            <Image
-              src={baptismImg}
-              alt="Baptism at Lifepointe Church"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 768px) 100vw, 45vw"
-            />
-          </div>
           <p
             className="text-[11px] font-medium tracking-[0.2em] uppercase mb-5"
             style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-accent)' }}
