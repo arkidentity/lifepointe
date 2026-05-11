@@ -301,6 +301,23 @@
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ALWAYS-LIGHT ISLAND
+   Apply .always-light to any section that should keep
+   the light-theme palette regardless of dark mode.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.dark .always-light {
+  --lp-bg:         #F7F4EF;
+  --lp-bg-alt:     #EFEBE4;
+  --lp-surface:    #FFFFFF;
+  --lp-surface-2:  #EFEBE4;
+  --lp-text:       #1A1612;
+  --lp-text-muted: #6B6258;
+  --lp-accent:     #2F8F84;
+  --lp-accent-hover: #236D64;
+  --lp-border:     rgba(26, 22, 18, 0.10);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    KEYFRAMES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 @keyframes fadeUp {

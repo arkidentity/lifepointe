@@ -27,7 +27,7 @@ const cards = [
 export function WhatToExpect() {
   return (
     <section
-      className="border-b"
+      className="always-light border-b"
       style={{ background: 'var(--lp-bg-alt)', borderColor: 'var(--lp-border)' }}
     >
       {/* Section header */}
