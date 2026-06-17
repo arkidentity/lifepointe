@@ -13,7 +13,7 @@ export function VisitHero() {
         {/* Left: text content */}
         <div className="px-5 pt-[72px] pb-[64px] md:pt-[88px] md:pb-[88px] md:px-12 flex flex-col justify-center">
           <p
-            className="text-[11px] font-medium tracking-[0.2em] uppercase mb-6"
+            className="text-[13px] font-medium tracking-[0.2em] uppercase mb-6"
             style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-accent)' }}
           >
             Lifepointe Church · Westfield, Indiana
@@ -37,7 +37,7 @@ export function VisitHero() {
           </p>
 
           {/* Info chips */}
-          <div className="flex flex-wrap gap-3 mb-10">
+          <div className="flex flex-col gap-2 mb-10">
             {[
               { icon: <ClockIcon />, label: 'Sundays at 10AM' },
               { icon: <PinIcon />,   label: '3233 West 166th St, Westfield, IN' },
@@ -49,7 +49,7 @@ export function VisitHero() {
               >
                 {icon}
                 <span
-                  className="text-[13px] font-medium"
+                  className="text-[15px] font-medium"
                   style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-text-muted)' }}
                 >
                   {label}
@@ -63,7 +63,7 @@ export function VisitHero() {
               href="https://maps.google.com/?q=3233+West+166th+Street+Westfield+IN"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-[12px] font-medium tracking-[0.12em] uppercase no-underline px-8 py-[14px] transition-all duration-200"
+              className="inline-block text-[14px] font-medium tracking-[0.12em] uppercase no-underline px-8 py-[14px] transition-all duration-200"
               style={{
                 fontFamily: 'var(--font-ui)',
                 color: '#fff',
@@ -95,7 +95,7 @@ export function VisitHero() {
 
 function ClockIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--lp-accent)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lp-accent)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <circle cx="12" cy="12" r="10" />
       <polyline points="12 6 12 12 16 14" />
     </svg>
@@ -104,7 +104,7 @@ function ClockIcon() {
 
 function PinIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--lp-accent)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lp-accent)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
       <circle cx="12" cy="10" r="3" />
     </svg>

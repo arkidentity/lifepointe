@@ -55,7 +55,7 @@ export function LifepointeKids() {
             style={{ borderColor: 'var(--lp-border)', background: 'var(--lp-surface)' }}
           >
             <p
-              className="text-[12px] font-medium tracking-[0.14em] uppercase mb-2"
+              className="text-[13px] font-medium tracking-[0.14em] uppercase mb-2"
               style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-accent)' }}
             >
               First-Timer Check-In
@@ -72,7 +72,7 @@ export function LifepointeKids() {
 
           <Link
             href="/kids"
-            className="inline-block text-[12px] font-medium tracking-[0.12em] uppercase no-underline px-8 py-[14px] border transition-all duration-200"
+            className="inline-block text-[14px] font-medium tracking-[0.12em] uppercase no-underline px-8 py-[14px] border transition-all duration-200"
             style={{
               fontFamily: 'var(--font-ui)',
               color: 'var(--lp-text)',
@@ -98,7 +98,7 @@ export function LifepointeKids() {
             style={{ background: 'var(--lp-surface)', borderColor: 'var(--lp-border)' }}
           >
             <p
-              className="text-[11px] font-medium tracking-[0.16em] uppercase mb-6"
+              className="text-[13px] font-medium tracking-[0.16em] uppercase mb-6"
               style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-text-muted)' }}
             >
               Kids Ministry Leadership
@@ -121,7 +121,7 @@ export function LifepointeKids() {
                     />
                   </div>
                   <span
-                    className="text-[12px]"
+                    className="text-[13px]"
                     style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-text-muted)' }}
                   >
                     {name.split(' ')[0]}
@@ -141,7 +141,7 @@ export function LifepointeKids() {
               Derek &amp; Lauren Van Dyke
             </p>
             <p
-              className="text-[13px] mb-6"
+              className="text-[14px] mb-6"
               style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-accent)' }}
             >
               Kids Ministry Directors
@@ -160,7 +160,7 @@ export function LifepointeKids() {
               style={{ borderColor: 'var(--lp-border)' }}
             >
               <p
-                className="text-[12px] font-medium tracking-[0.1em] uppercase mb-1"
+                className="text-[13px] font-medium tracking-[0.1em] uppercase mb-1"
                 style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-text-muted)' }}
               >
                 Ages Served

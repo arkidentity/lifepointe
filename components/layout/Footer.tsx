@@ -127,7 +127,7 @@ export function Footer() {
           ].map(({ title, links }) => (
             <div key={title}>
               <p
-                className="text-[12px] font-medium tracking-[0.15em] uppercase mb-4"
+                className="text-[13px] font-medium tracking-[0.15em] uppercase mb-4"
                 style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-footer-col-title)' }}
               >
                 {title}
@@ -148,13 +148,13 @@ export function Footer() {
         style={{ borderColor: 'var(--lp-footer-border)' }}
       >
         <p
-          className="text-[13px] mb-1.5 md:mb-0"
+          className="text-[14px] mb-1.5 md:mb-0"
           style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-footer-copy)' }}
         >
           &copy; 2025 Lifepointe Church. All rights reserved.
         </p>
         <p
-          className="text-[13px] leading-[1.6] md:text-right"
+          className="text-[14px] leading-[1.6] md:text-right"
           style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-footer-addr)' }}
         >
           3233 West 166th Street, Westfield, IN 46074 &nbsp;·&nbsp; info@lpcwestfield.com

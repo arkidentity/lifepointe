@@ -33,7 +33,7 @@ export function Vision() {
 
       <div className="relative z-[2]">
         <p
-          className="text-[11px] font-medium tracking-[0.2em] uppercase mb-7"
+          className="text-[13px] font-medium tracking-[0.2em] uppercase mb-7"
           style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-accent)' }}
         >
           Our Vision

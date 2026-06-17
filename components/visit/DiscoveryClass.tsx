@@ -10,7 +10,7 @@ export function DiscoveryClass() {
         {/* Left: label + headline */}
         <div className="mb-10 md:mb-0">
           <p
-            className="text-[11px] font-medium tracking-[0.2em] uppercase mb-5"
+            className="text-[13px] font-medium tracking-[0.2em] uppercase mb-5"
             style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-accent)' }}
           >
             Take the Next Step
@@ -43,7 +43,7 @@ export function DiscoveryClass() {
           <div className="flex flex-col gap-7">
             <div>
               <p
-                className="text-[12px] font-medium tracking-[0.14em] uppercase mb-2"
+                className="text-[13px] font-medium tracking-[0.14em] uppercase mb-2"
                 style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-text-muted)' }}
               >
                 What It Covers
@@ -62,7 +62,7 @@ export function DiscoveryClass() {
               style={{ borderColor: 'var(--lp-border)' }}
             >
               <p
-                className="text-[12px] font-medium tracking-[0.14em] uppercase mb-2"
+                className="text-[13px] font-medium tracking-[0.14em] uppercase mb-2"
                 style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-text-muted)' }}
               >
                 When
@@ -80,14 +80,14 @@ export function DiscoveryClass() {
               style={{ borderColor: 'var(--lp-border)' }}
             >
               <p
-                className="text-[12px] font-medium tracking-[0.14em] uppercase mb-3"
+                className="text-[13px] font-medium tracking-[0.14em] uppercase mb-3"
                 style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-text-muted)' }}
               >
                 Sign Up
               </p>
               <a
                 href="mailto:info@lpcwestfield.com?subject=Discovery%20Class"
-                className="inline-block text-[12px] font-medium tracking-[0.12em] uppercase no-underline px-8 py-[14px] transition-all duration-200"
+                className="inline-block text-[14px] font-medium tracking-[0.12em] uppercase no-underline px-8 py-[14px] transition-all duration-200"
                 style={{
                   fontFamily: 'var(--font-ui)',
                   color: '#fff',

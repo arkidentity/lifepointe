@@ -7,7 +7,7 @@ export function PageStub({ title, description }: PageStubProps) {
   return (
     <section className="min-h-[60vh] flex flex-col items-center justify-center px-6 py-24 text-center">
       <p
-        className="text-[11px] font-medium tracking-[0.18em] uppercase mb-5"
+        className="text-[13px] font-medium tracking-[0.18em] uppercase mb-5"
         style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-accent)' }}
       >
         Coming Soon

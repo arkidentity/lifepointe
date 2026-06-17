@@ -1,18 +1,15 @@
 import { PageLayout } from '@/components/layout/PageLayout'
-import { PageStub } from '@/components/layout/PageStub'
+import { GivePage } from '@/components/give/GivePage'
 
 export const metadata = {
   title: 'Give — Lifepointe Church',
-  description: 'Give online to Lifepointe Church.',
+  description: 'Give online to Lifepointe Church in Westfield, Indiana.',
 }
 
-export default function GivePage() {
+export default function GivePageRoute() {
   return (
     <PageLayout>
-      <PageStub
-        title="Give"
-        description="Giving platform embed. Needs platform confirmation from Josh (Tithe.ly, Pushpay, or other)."
-      />
+      <GivePage />
     </PageLayout>
   )
 }

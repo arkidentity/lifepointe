@@ -6,7 +6,7 @@ export function VisitContact() {
     >
       <div className="max-w-[480px] mx-auto">
         <p
-          className="text-[11px] font-medium tracking-[0.2em] uppercase mb-5"
+          className="text-[13px] font-medium tracking-[0.2em] uppercase mb-5"
           style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-accent)' }}
         >
           Questions?

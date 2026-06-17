@@ -18,7 +18,7 @@ export function Altar() {
 
       <div className="relative z-[2] md:max-w-[680px] md:mx-auto">
         <p
-          className="text-[11px] font-medium tracking-[0.2em] uppercase mb-5"
+          className="text-[13px] font-medium tracking-[0.2em] uppercase mb-5"
           style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-altar-label-color)' }}
         >
           Join Us
@@ -81,7 +81,7 @@ export function Altar() {
         </p>
         <Link
           href="/visit"
-          className="inline-block text-[13px] font-medium tracking-[0.12em] uppercase no-underline px-10 py-[15px] transition-all duration-200 hover:-translate-y-px"
+          className="inline-block text-[14px] font-medium tracking-[0.12em] uppercase no-underline px-10 py-[15px] transition-all duration-200 hover:-translate-y-px"
           style={{
             fontFamily: 'var(--font-ui)',
             color: 'var(--lp-altar-cta-color)',

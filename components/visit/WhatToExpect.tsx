@@ -33,7 +33,7 @@ export function WhatToExpect() {
       {/* Section header */}
       <div className="px-5 pt-[72px] pb-10 md:pt-[100px] md:pb-14 md:px-12">
         <p
-          className="text-[11px] font-medium tracking-[0.2em] uppercase mb-5"
+          className="text-[13px] font-medium tracking-[0.2em] uppercase mb-5"
           style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-accent)' }}
         >
           What to Expect
@@ -77,7 +77,7 @@ export function WhatToExpect() {
 
             <div>
               <p
-                className="text-[13px] font-medium tracking-[0.1em] uppercase mb-3"
+                className="text-[14px] font-medium tracking-[0.1em] uppercase mb-3"
                 style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-text)' }}
               >
                 {label}

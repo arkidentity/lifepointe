@@ -57,7 +57,7 @@ export function SermonPreview() {
             Sermon Title Goes Here
           </h2>
           <p
-            className="text-[14px]"
+            className="text-[15px]"
             style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-text-muted)' }}
           >
             May 4, 2025 &nbsp;·&nbsp; Pastor Josh
@@ -72,7 +72,7 @@ export function SermonPreview() {
           <div className="flex items-center gap-4 mt-1">
             <Link
               href="/watch"
-              className="flex items-center gap-2 text-[12px] font-medium tracking-[0.1em] uppercase no-underline transition-colors duration-200 group"
+              className="flex items-center gap-2 text-[13px] font-medium tracking-[0.1em] uppercase no-underline transition-colors duration-200 group"
               style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-text-muted)' }}
               onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = 'var(--lp-sermon-link-hover)')}
               onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'var(--lp-text-muted)')}
