@@ -1,5 +1,5 @@
 import { PageLayout } from '@/components/layout/PageLayout'
-import { BreezeCalendar } from '@/components/events/BreezeCalendar'
+import { EventsList } from '@/components/events/EventsList'
 
 export const metadata = {
   title: 'Events — Lifepointe Church',
@@ -9,7 +9,7 @@ export const metadata = {
 export default function EventsPage() {
   return (
     <PageLayout>
-      <BreezeCalendar />
+      <EventsList />
     </PageLayout>
   )
 }
