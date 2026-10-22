@@ -1,0 +1,12 @@
+# Groundwork workspace config. Clients never see this file.
+name: Lifepointe Church
+slug: lifepointe
+# One-repo setup: this repo is the website and the workspace. Processed notes go in notes/.
+team:
+  - Travis
+people:
+  # Client logins, one per line: "Full Name <email>". Add Tom here once we have his email.
+
+libraries:
+  - source: arkidentity/groundwork-library
+    ref: v0.6.0

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Lora, DM_Sans } from 'next/font/google'
 import { Providers } from '@/components/providers'
+import { NoteTab } from '@/components/admin/NoteTab'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -36,7 +37,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${playfair.variable} ${lora.variable} ${dmSans.variable}`}
     >
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <NoteTab />
+        </Providers>
       </body>
     </html>
   )
