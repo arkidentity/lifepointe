@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import derekImg from '@/images/team/derek-van-dyke-kids.png'
-import laurenImg from '@/images/team/lauren-van-dyle-kids.png'
 import kidsLogoImg from '@/images/lp-kids.png'
 
 export function LifepointeKids() {
@@ -105,10 +104,9 @@ export function LifepointeKids() {
             </p>
 
             {/* Photos */}
-            <div className="grid grid-cols-2 gap-3 mb-6">
+            <div className="grid grid-cols-1 gap-3 mb-6">
               {[
                 { src: derekImg, name: 'Derek Van Dyke' },
-                { src: laurenImg, name: 'Lauren Van Dyke' },
               ].map(({ src, name }) => (
                 <div key={name}>
                   <div className="relative w-full aspect-[696/410] overflow-hidden mb-2">
@@ -138,20 +136,20 @@ export function LifepointeKids() {
                 color: 'var(--lp-text)',
               }}
             >
-              Derek &amp; Lauren Van Dyke
+              Derek Van Dyke
             </p>
             <p
               className="text-[14px] mb-6"
               style={{ fontFamily: 'var(--font-ui)', color: 'var(--lp-accent)' }}
             >
-              Kids Ministry Directors
+              Kids Ministry Director
             </p>
             <p
               className="text-[15px] leading-[1.75]"
               style={{ fontFamily: 'var(--font-body)', color: 'var(--lp-text-muted)' }}
             >
-              Derek and Lauren lead Lifepointe Kids with a conviction that children should encounter
-              God — not just learn about him. They&apos;re happy to answer any questions about your
+              Derek leads Lifepointe Kids with a conviction that children should encounter
+              God — not just learn about him. He&apos;s happy to answer any questions about your
               child&apos;s experience on Sunday.
             </p>
 
